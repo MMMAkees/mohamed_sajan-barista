@@ -14,106 +14,116 @@ function CoffeeCupModel() {
   useFrame((state, delta) => {
     if (groupRef.current) {
       groupRef.current.rotation.y += delta * 0.4;
-      groupRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.8) * 0.05;
+      groupRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.8) * 0.06;
     }
     if (steamRef.current) {
       steamRef.current.children.forEach((child, i) => {
-        child.position.y += delta * 0.4;
-        child.scale.x = 1 + Math.sin(state.clock.elapsedTime * 2 + i) * 0.2;
+        child.position.y += delta * 0.45;
+        child.scale.x = 1 + Math.sin(state.clock.elapsedTime * 2 + i) * 0.25;
         child.scale.z = child.scale.x;
-        if (child.position.y > 2.2) {
+        if (child.position.y > 2.3) {
           child.position.y = 0.9;
         }
       });
     }
   });
 
-  // Coffee Bean Mesh geometry & material helper
+  // 3D Coffee Beans positioning
   const beanPositions = useMemo(() => {
-    return Array.from({ length: 12 }).map((_, i) => ({
+    return Array.from({ length: 14 }).map((_, i) => ({
       position: [
-        (Math.random() - 0.5) * 3.2,
-        (Math.random() - 0.5) * 2.5,
-        (Math.random() - 0.5) * 3.2
+        (Math.random() - 0.5) * 3.4,
+        (Math.random() - 0.5) * 2.8,
+        (Math.random() - 0.5) * 3.4
       ] as [number, number, number],
       rotation: [
         Math.random() * Math.PI,
         Math.random() * Math.PI,
         Math.random() * Math.PI
       ] as [number, number, number],
-      scale: 0.12 + Math.random() * 0.08
+      scale: 0.13 + Math.random() * 0.09
     }));
   }, []);
 
   return (
     <group ref={groupRef} position={[0, -0.4, 0]}>
-      {/* Outer Ceramic Cup Wall */}
+      {/* Outer Luxury Porcelain Ceramic Cup Wall (Bright Ivory for Crisp Contrast) */}
       <mesh position={[0, 0, 0]} castShadow receiveShadow>
-        <cylinderGeometry args={[0.95, 0.65, 1.5, 32]} />
+        <cylinderGeometry args={[0.96, 0.66, 1.52, 32]} />
         <meshStandardMaterial
-          color="#1C130E"
-          roughness={0.2}
-          metalness={0.8}
-          envMapIntensity={1.5}
+          color="#FAF5EE"
+          roughness={0.15}
+          metalness={0.3}
+          envMapIntensity={2.0}
         />
       </mesh>
 
-      {/* Inner Ceramic Cup Lining */}
+      {/* Gold Trim Ring Around Rim */}
+      <mesh position={[0, 0.76, 0]}>
+        <torusGeometry args={[0.96, 0.03, 16, 32]} />
+        <meshStandardMaterial color="#D4A373" roughness={0.1} metalness={0.9} />
+      </mesh>
+
+      {/* Inner Ceramic Cup Wall */}
       <mesh position={[0, 0.05, 0]}>
-        <cylinderGeometry args={[0.88, 0.6, 1.42, 32]} />
-        <meshStandardMaterial color="#FAF5EE" roughness={0.3} />
+        <cylinderGeometry args={[0.89, 0.61, 1.44, 32]} />
+        <meshStandardMaterial color="#FFFFFF" roughness={0.1} />
       </mesh>
 
       {/* Coffee Liquid Surface */}
-      <mesh position={[0, 0.62, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-        <ringGeometry args={[0, 0.86, 32]} />
+      <mesh position={[0, 0.63, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+        <ringGeometry args={[0, 0.87, 32]} />
         <meshStandardMaterial
-          color="#2A170C"
-          roughness={0.1}
-          metalness={0.2}
+          color="#201007"
+          roughness={0.08}
+          metalness={0.3}
         />
       </mesh>
 
-      {/* Golden Crema Center Ring */}
-      <mesh position={[0, 0.625, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-        <ringGeometry args={[0.15, 0.65, 32]} />
-        <meshBasicMaterial color="#C89D66" transparent opacity={0.65} />
+      {/* Golden Crema Center Art Pattern */}
+      <mesh position={[0, 0.635, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+        <ringGeometry args={[0.12, 0.7, 32]} />
+        <meshBasicMaterial color="#E6B875" transparent opacity={0.75} />
       </mesh>
 
-      {/* Cup Handle */}
-      <mesh position={[1.05, 0, 0]} rotation={[0, 0, Math.PI / 8]}>
-        <torusGeometry args={[0.42, 0.1, 16, 32, Math.PI * 1.2]} />
-        <meshStandardMaterial color="#1C130E" roughness={0.2} metalness={0.8} />
+      {/* Cup Handle (Gold Accent) */}
+      <mesh position={[1.06, 0, 0]} rotation={[0, 0, Math.PI / 8]}>
+        <torusGeometry args={[0.43, 0.1, 16, 32, Math.PI * 1.2]} />
+        <meshStandardMaterial color="#FAF5EE" roughness={0.15} metalness={0.4} />
       </mesh>
 
-      {/* Saucer Base */}
+      {/* Saucer Base Plate (Ivory & Gold Rim) */}
       <mesh position={[0, -0.82, 0]}>
-        <cylinderGeometry args={[1.5, 0.9, 0.12, 32]} />
-        <meshStandardMaterial color="#160E0A" roughness={0.3} metalness={0.7} />
+        <cylinderGeometry args={[1.55, 0.95, 0.14, 32]} />
+        <meshStandardMaterial color="#FAF5EE" roughness={0.2} metalness={0.4} />
+      </mesh>
+      <mesh position={[0, -0.76, 0]}>
+        <torusGeometry args={[1.54, 0.02, 16, 32]} />
+        <meshStandardMaterial color="#D4A373" roughness={0.1} metalness={0.9} />
       </mesh>
 
       {/* Rising Steam Particle Meshes */}
       <group ref={steamRef} position={[0, 0.7, 0]}>
         {[0.1, 0.35, 0.6, 0.85, 1.1].map((offset, i) => (
           <mesh key={i} position={[(i % 2 === 0 ? 0.15 : -0.15), offset, (i % 3 === 0 ? 0.1 : -0.1)]}>
-            <sphereGeometry args={[0.12 + i * 0.02, 16, 16]} />
+            <sphereGeometry args={[0.14 + i * 0.02, 16, 16]} />
             <MeshWobbleMaterial
-              color="#F5EAE0"
+              color="#FFF8F0"
               transparent
-              opacity={0.25 - i * 0.04}
-              factor={0.4}
-              speed={2}
+              opacity={0.35 - i * 0.05}
+              factor={0.5}
+              speed={2.2}
             />
           </mesh>
         ))}
       </group>
 
-      {/* Floating 3D Roasted Coffee Beans orbiting */}
+      {/* Floating 3D Roasted Coffee Beans */}
       {beanPositions.map((bean, idx) => (
-        <Float key={idx} speed={1.5} rotationIntensity={2} floatIntensity={1.5}>
+        <Float key={idx} speed={1.6} rotationIntensity={2.2} floatIntensity={1.8}>
           <mesh position={bean.position} rotation={bean.rotation} scale={bean.scale}>
             <sphereGeometry args={[1, 16, 16]} />
-            <meshStandardMaterial color="#3D2314" roughness={0.4} />
+            <meshStandardMaterial color="#4A2A18" roughness={0.3} metalness={0.2} />
           </mesh>
         </Float>
       ))}
@@ -123,16 +133,23 @@ function CoffeeCupModel() {
 
 export default function CoffeeCupCanvas() {
   return (
-    <div className="w-full h-[400px] md:h-[500px] relative flex items-center justify-center">
+    <div className="w-full h-[420px] md:h-[520px] relative flex items-center justify-center">
+      {/* High Contrast Background Glowing Pedestal */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-gradient-to-tr from-[#C89D66]/40 via-[#F4D09A]/30 to-[#C89D66]/40 blur-3xl animate-pedestal" />
+        <div className="absolute bottom-12 w-48 h-12 rounded-full bg-[#C89D66]/50 blur-xl" />
+      </div>
+
       <Canvas
-        camera={{ position: [0, 1.8, 4.2], fov: 45 }}
+        camera={{ position: [0, 1.8, 4.3], fov: 45 }}
         gl={{ antialias: true, alpha: true }}
-        className="cursor-grab active:cursor-grabbing"
+        className="cursor-grab active:cursor-grabbing relative z-10"
       >
-        <ambientLight intensity={0.9} />
-        <directionalLight position={[5, 8, 5]} intensity={1.8} color="#FFE6CA" castShadow />
-        <pointLight position={[-4, 2, -2]} intensity={1.2} color="#C89D66" />
-        <spotLight position={[0, 6, 2]} angle={0.6} penumbra={0.8} intensity={2} color="#FDE68A" />
+        <ambientLight intensity={1.4} />
+        <directionalLight position={[6, 9, 6]} intensity={2.5} color="#FFF5EA" castShadow />
+        <pointLight position={[-5, 3, -3]} intensity={2.0} color="#F4D09A" />
+        <pointLight position={[5, -2, 4]} intensity={1.5} color="#C89D66" />
+        <spotLight position={[0, 7, 3]} angle={0.7} penumbra={0.9} intensity={3.0} color="#FFFFFF" />
 
         <CoffeeCupModel />
 
@@ -145,10 +162,10 @@ export default function CoffeeCupCanvas() {
         />
       </Canvas>
 
-      {/* Floating Instruction Hint */}
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-[#C89D66]/30 text-xs text-[#E6C594] pointer-events-none flex items-center gap-2">
-        <span className="w-2 h-2 rounded-full bg-[#C89D66] animate-ping" />
-        Interactive 3D Model — Drag to Rotate
+      {/* Floating Interactive Badge */}
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-[#C89D66]/50 text-xs font-semibold text-[#E6C594] pointer-events-none flex items-center gap-2 z-20 shadow-xl">
+        <span className="w-2.5 h-2.5 rounded-full bg-[#E6C594] animate-ping" />
+        3D Artisanal Model — Drag to Rotate
       </div>
     </div>
   );

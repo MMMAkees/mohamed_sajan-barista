@@ -61,7 +61,7 @@ export default function InteractiveBrewSimulator() {
 
   // Extraction math ratios
   const ratio = (yieldAmount / (dose || 1)).toFixed(2);
-  let statusText = 'Perfect Golden Balance ✨';
+  let statusText = 'Perfect Golden Balance';
   let statusColor = 'text-emerald-400 border-emerald-500/40 bg-emerald-950/40';
 
   const numRatio = parseFloat(ratio);
@@ -223,7 +223,8 @@ export default function InteractiveBrewSimulator() {
               </div>
 
               {/* Status Badge */}
-              <div className={`p-4 rounded-2xl border text-center text-sm font-bold ${statusColor}`}>
+              <div className={`p-4 rounded-2xl border text-center text-sm font-bold flex items-center justify-center gap-2 ${statusColor}`}>
+                <Sparkles className="w-4 h-4 shrink-0" />
                 {statusText}
               </div>
 

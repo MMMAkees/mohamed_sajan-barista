@@ -19,7 +19,7 @@ export default function HeroSection() {
 
         {/* Grid pattern overlay */}
         <div 
-          className="absolute inset-0 opacity-[0.03]" 
+          className="absolute inset-0 opacity-[0.03] dark:opacity-[0.03] light:opacity-[0.08]" 
           style={{ backgroundImage: 'radial-gradient(#C89D66 1px, transparent 1px)', backgroundSize: '32px 32px' }} 
         />
       </div>
@@ -33,9 +33,9 @@ export default function HeroSection() {
           className="lg:col-span-7 space-y-6"
         >
           {/* Status Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#18100C]/80 border border-[#C89D66]/40 backdrop-blur-md shadow-lg shadow-[#C89D66]/10">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#18100C]/80 dark:bg-[#18100C]/80 light:bg-white/80 border border-[#C89D66]/40 backdrop-blur-md shadow-lg shadow-[#C89D66]/10">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-xs font-semibold text-[#E6C594] tracking-wide flex items-center gap-1.5">
+            <span className="text-xs font-semibold text-[#E6C594] light:text-[#7A4E1D] tracking-wide flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-[#C89D66]" />
               Currently Barista at F-Mart Boutique (Pearl-Qatar, Doha)
             </span>
@@ -43,8 +43,8 @@ export default function HeroSection() {
 
           {/* Main Headline */}
           <div className="space-y-2">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-              <span className="block text-stone-200">{BARISTA_PROFILE.name}</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+              <span className="block text-stone-100 dark:text-stone-100 light:text-stone-900">{BARISTA_PROFILE.name}</span>
               <span className="block text-gradient-amber mt-1">{BARISTA_PROFILE.title}</span>
             </h1>
             <p className="text-lg sm:text-xl text-[#C89D66] font-medium tracking-wide">
@@ -53,7 +53,7 @@ export default function HeroSection() {
           </div>
 
           {/* Short Bio snippet */}
-          <p className="text-stone-300 text-base leading-relaxed max-w-2xl">
+          <p className="text-stone-300 dark:text-stone-300 light:text-stone-700 text-base leading-relaxed max-w-2xl">
             Passionate specialty coffee professional with experience across Sri Lanka and Qatar. Mastering espresso extraction, microfoam latte art, manual brewing methods, and high-footfall cafe hospitality.
           </p>
 
@@ -67,8 +67,8 @@ export default function HeroSection() {
                 transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
                 className="glass-panel p-3.5 rounded-2xl border border-[#C89D66]/20 text-center"
               >
-                <div className="text-2xl font-black text-[#E6C594]">{stat.value}</div>
-                <div className="text-[11px] text-stone-400 font-medium leading-snug mt-0.5">{stat.label}</div>
+                <div className="text-2xl font-black text-[#E6C594] light:text-[#7A4E1D]">{stat.value}</div>
+                <div className="text-[11px] text-stone-400 dark:text-stone-400 light:text-stone-600 font-medium leading-snug mt-0.5">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -85,7 +85,7 @@ export default function HeroSection() {
 
             <a
               href="#brew-simulator"
-              className="px-6 py-3.5 rounded-2xl bg-[#18100C]/80 hover:bg-[#2E1E16] text-[#E6C594] border border-[#C89D66]/40 text-sm font-semibold transition-all flex items-center gap-2 backdrop-blur-md"
+              className="px-6 py-3.5 rounded-2xl bg-[#18100C]/80 dark:bg-[#18100C]/80 light:bg-white hover:bg-[#2E1E16] text-[#E6C594] light:text-[#7A4E1D] border border-[#C89D66]/40 text-sm font-semibold transition-all flex items-center gap-2 backdrop-blur-md"
             >
               <Coffee className="w-4 h-4 text-[#C89D66]" />
               Brew Simulator
@@ -93,7 +93,7 @@ export default function HeroSection() {
 
             <a
               href={`mailto:${BARISTA_PROFILE.email}`}
-              className="p-3.5 rounded-2xl bg-[#18100C]/60 hover:bg-[#C89D66]/20 border border-white/10 text-stone-300 hover:text-white transition-all"
+              className="p-3.5 rounded-2xl bg-[#18100C]/60 dark:bg-[#18100C]/60 light:bg-white hover:bg-[#C89D66]/20 border border-white/10 text-stone-300 light:text-stone-700 hover:text-white transition-all"
               title="Email Sajan"
             >
               <Mail className="w-5 h-5 text-[#C89D66]" />
@@ -103,7 +103,7 @@ export default function HeroSection() {
               href={BARISTA_PROFILE.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3.5 rounded-2xl bg-[#18100C]/60 hover:bg-[#C89D66]/20 border border-white/10 text-stone-300 hover:text-white transition-all"
+              className="p-3.5 rounded-2xl bg-[#18100C]/60 dark:bg-[#18100C]/60 light:bg-white hover:bg-[#C89D66]/20 border border-white/10 text-stone-300 light:text-stone-700 hover:text-white transition-all"
               title="Instagram @sajanBarista"
             >
               <InstagramIcon className="w-5 h-5 text-[#C89D66]" />
@@ -111,7 +111,7 @@ export default function HeroSection() {
           </div>
         </motion.div>
 
-        {/* Right Column: Portrait Card + 3D Cup Canvas */}
+        {/* Right Column: Portrait Card + MS Logo Badge + 3D Cup Canvas */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -119,7 +119,7 @@ export default function HeroSection() {
           className="lg:col-span-5 relative flex flex-col items-center"
         >
           {/* Portrait Image with Luxury Frame */}
-          <div className="relative w-64 h-80 sm:w-72 sm:h-96 rounded-3xl overflow-hidden shadow-2xl border-2 border-[#C89D66]/50 group">
+          <div className="relative w-64 h-80 sm:w-72 sm:h-96 rounded-3xl overflow-hidden shadow-2xl border-2 border-[#C89D66]/60 group">
             <Image
               src={BARISTA_PROFILE.imagePath}
               alt={BARISTA_PROFILE.name}
@@ -127,6 +127,16 @@ export default function HeroSection() {
               className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
               priority
             />
+
+            {/* MS Monogram Badge overlay on portrait corner */}
+            <div className="absolute top-3 right-3 w-10 h-10 rounded-full border-2 border-[#C89D66] overflow-hidden shadow-lg bg-black/90 p-0.5">
+              <Image
+                src="/logo.png"
+                alt="MS Monogram Logo"
+                fill
+                className="object-cover"
+              />
+            </div>
 
             {/* Glass Overlay Card on Image */}
             <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-[#0B0705] via-[#0B0705]/80 to-transparent backdrop-blur-xs flex items-center justify-between">
@@ -141,7 +151,7 @@ export default function HeroSection() {
           </div>
 
           {/* 3D Coffee Cup Viewer under portrait */}
-          <div className="w-full max-w-sm mt-4">
+          <div className="w-full max-w-sm mt-2">
             <CoffeeCupCanvas />
           </div>
         </motion.div>
