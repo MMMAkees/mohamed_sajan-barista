@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
-import { Mail, Phone, MapPin, Send, MessageSquare, CheckCircle, Sparkles, Coffee } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageSquare, CheckCircle, Coffee, Sliders } from 'lucide-react';
 import { InstagramIcon } from '@/components/ui/InstagramIcon';
 import { BARISTA_PROFILE } from '@/data/baristaData';
 
@@ -20,7 +20,6 @@ export default function ContactSection() {
     e.preventDefault();
     if (!formState.name || !formState.email || !formState.message) return;
 
-    // Trigger golden confetti celebration
     try {
       confetti({
         particleCount: 80,
@@ -36,138 +35,103 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 px-4 relative z-10 bg-[#0F0906]/80 backdrop-blur-md">
+    <section id="contact" className="py-24 px-4 relative z-10" style={{ background: 'var(--bg-secondary)' }}>
       <div className="max-w-6xl mx-auto space-y-16">
-        {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#18100C] border border-[#C89D66]/30 text-xs font-bold text-[#E6C594]">
-            <Mail className="w-3.5 h-3.5 text-[#C89D66]" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold"
+            style={{ background: 'var(--bg-card-solid)', border: '1px solid var(--border-default)', color: 'var(--text-accent)' }}
+          >
+            <Mail className="w-3.5 h-3.5" style={{ color: 'var(--gold)' }} />
             GET IN TOUCH FOR CAFE ROLES & COLLABORATIONS
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+          <h2 className="text-3xl sm:text-4xl font-extrabold" style={{ color: 'var(--text-primary)' }}>
             Hire <span className="text-gradient-amber">{BARISTA_PROFILE.shortName}</span>
           </h2>
-          <p className="text-stone-400 text-sm sm:text-base">
+          <p className="text-sm sm:text-base" style={{ color: 'var(--text-muted)' }}>
             Currently available in Doha, Qatar. Open to full-time barista roles, shift coverages, and specialty coffee consulting.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
-          {/* Direct Contact Info Panel */}
+          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-5 glass-panel p-8 rounded-3xl border border-[#C89D66]/25 flex flex-col justify-between space-y-8"
+            className="lg:col-span-5 glass-panel p-8 rounded-3xl flex flex-col justify-between space-y-8"
           >
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-white flex items-center gap-2">
-                <Coffee className="w-6 h-6 text-[#C89D66]" />
+              <h3 className="text-2xl font-bold flex items-center gap-2" style={{ color: 'var(--text-primary)' }}>
+                <Coffee className="w-6 h-6" style={{ color: 'var(--gold)' }} />
                 Direct Communication
               </h3>
 
               <div className="space-y-4">
-                {/* Phone Link */}
-                <a
-                  href={`tel:${BARISTA_PROFILE.phone}`}
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-[#18100C]/80 border border-[#C89D66]/30 hover:border-[#C89D66] transition-all group"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-[#2E1E16] border border-[#C89D66]/40 flex items-center justify-center text-[#E6C594] shrink-0 group-hover:scale-105 transition-transform">
-                    <Phone className="w-5 h-5 text-[#C89D66]" />
-                  </div>
-                  <div>
-                    <span className="text-xs text-stone-400 font-medium block">Phone / Mobile</span>
-                    <span className="text-sm font-bold text-white group-hover:text-[#E6C594] transition-colors">
-                      {BARISTA_PROFILE.phone}
-                    </span>
-                  </div>
-                </a>
-
-                {/* Email Link */}
-                <a
-                  href={`mailto:${BARISTA_PROFILE.email}`}
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-[#18100C]/80 border border-[#C89D66]/30 hover:border-[#C89D66] transition-all group"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-[#2E1E16] border border-[#C89D66]/40 flex items-center justify-center text-[#E6C594] shrink-0 group-hover:scale-105 transition-transform">
-                    <Mail className="w-5 h-5 text-[#C89D66]" />
-                  </div>
-                  <div className="overflow-hidden">
-                    <span className="text-xs text-stone-400 font-medium block">Direct Email</span>
-                    <span className="text-sm font-bold text-white group-hover:text-[#E6C594] transition-colors truncate block">
-                      {BARISTA_PROFILE.email}
-                    </span>
-                  </div>
-                </a>
-
-                {/* WhatsApp Direct */}
-                <a
-                  href={`https://wa.me/${BARISTA_PROFILE.phone.replace(/[^0-9]/g, '')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-[#18100C]/80 border border-[#C89D66]/30 hover:border-[#C89D66] transition-all group"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-[#2E1E16] border border-[#C89D66]/40 flex items-center justify-center text-[#E6C594] shrink-0 group-hover:scale-105 transition-transform">
-                    <MessageSquare className="w-5 h-5 text-[#C89D66]" />
-                  </div>
-                  <div>
-                    <span className="text-xs text-stone-400 font-medium block">WhatsApp Chat</span>
-                    <span className="text-sm font-bold text-white group-hover:text-[#E6C594] transition-colors">
-                      Message Sajan Directly
-                    </span>
-                  </div>
-                </a>
-
-                {/* Instagram Handle */}
-                <a
-                  href={BARISTA_PROFILE.instagramUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-[#18100C]/80 border border-[#C89D66]/30 hover:border-[#C89D66] transition-all group"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-[#2E1E16] border border-[#C89D66]/40 flex items-center justify-center text-[#E6C594] shrink-0 group-hover:scale-105 transition-transform">
-                    <InstagramIcon className="w-5 h-5 text-[#C89D66]" />
-                  </div>
-                  <div>
-                    <span className="text-xs text-stone-400 font-medium block">Instagram Handle</span>
-                    <span className="text-sm font-bold text-white group-hover:text-[#E6C594] transition-colors">
-                      @{BARISTA_PROFILE.instagramHandle}
-                    </span>
-                  </div>
-                </a>
+                {[
+                  { href: `tel:${BARISTA_PROFILE.phone}`, icon: <Phone className="w-5 h-5" />, label: 'Phone / Mobile', value: BARISTA_PROFILE.phone },
+                  { href: `mailto:${BARISTA_PROFILE.email}`, icon: <Mail className="w-5 h-5" />, label: 'Direct Email', value: BARISTA_PROFILE.email },
+                  { href: `https://wa.me/${BARISTA_PROFILE.phone.replace(/[^0-9]/g, '')}`, icon: <MessageSquare className="w-5 h-5" />, label: 'WhatsApp Chat', value: 'Message Sajan Directly', external: true },
+                  { href: BARISTA_PROFILE.instagramUrl, icon: <InstagramIcon className="w-5 h-5" />, label: 'Instagram Handle', value: `@${BARISTA_PROFILE.instagramHandle}`, external: true },
+                ].map((item, i) => (
+                  <a
+                    key={i}
+                    href={item.href}
+                    target={item.external ? '_blank' : undefined}
+                    rel={item.external ? 'noopener noreferrer' : undefined}
+                    className="flex items-center gap-4 p-4 rounded-2xl transition-all group hover:opacity-80"
+                    style={{ background: 'var(--bg-card-solid)', border: '1px solid var(--border-default)' }}
+                  >
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform"
+                      style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border-default)', color: 'var(--gold)' }}
+                    >
+                      {item.icon}
+                    </div>
+                    <div className="overflow-hidden">
+                      <span className="text-xs font-medium block" style={{ color: 'var(--text-muted)' }}>{item.label}</span>
+                      <span className="text-sm font-bold truncate block" style={{ color: 'var(--text-primary)' }}>
+                        {item.value}
+                      </span>
+                    </div>
+                  </a>
+                ))}
               </div>
             </div>
 
-            {/* Location Tag */}
-            <div className="p-4 rounded-2xl bg-[#18100C] border border-[#C89D66]/30 flex items-center gap-3">
-              <MapPin className="w-5 h-5 text-[#C89D66] shrink-0" />
-              <div className="text-xs text-stone-300">
-                <span className="font-bold text-white block">Based in Doha, Qatar</span>
+            <div className="p-4 rounded-2xl flex items-center gap-3"
+              style={{ background: 'var(--bg-card-solid)', border: '1px solid var(--border-default)' }}
+            >
+              <MapPin className="w-5 h-5 shrink-0" style={{ color: 'var(--gold)' }} />
+              <div className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+                <span className="font-bold block" style={{ color: 'var(--text-primary)' }}>Based in Doha, Qatar</span>
                 Pearl-Qatar • Porto Arabia Counter Operations
               </div>
             </div>
           </motion.div>
 
-          {/* Interactive Email Form */}
+          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-7 glass-panel p-8 rounded-3xl border border-[#C89D66]/25 flex flex-col justify-between"
+            className="lg:col-span-7 glass-panel p-8 rounded-3xl flex flex-col justify-between"
           >
             {submitted ? (
               <div className="py-16 text-center space-y-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-950 border-2 border-emerald-500 flex items-center justify-center text-emerald-400 mx-auto">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto"
+                  style={{ background: 'rgba(200, 157, 102, 0.15)', border: '2px solid var(--gold)', color: 'var(--gold)' }}
+                >
                   <CheckCircle className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-white">Message Sent Successfully!</h3>
-                <p className="text-stone-300 text-sm max-w-md mx-auto">
+                <h3 className="text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>Message Sent Successfully!</h3>
+                <p className="text-sm max-w-md mx-auto" style={{ color: 'var(--text-secondary)' }}>
                   Thank you for reaching out. Sajan will respond to your message shortly.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="px-6 py-2.5 rounded-xl bg-[#2E1E16] text-[#E6C594] font-bold text-xs border border-[#C89D66]/40 hover:bg-[#C89D66] hover:text-[#0B0705] transition-all"
+                  className="px-6 py-2.5 rounded-xl font-bold text-xs transition-all hover:opacity-80"
+                  style={{ background: 'var(--bg-elevated)', color: 'var(--text-accent)', border: '1px solid var(--border-default)' }}
                 >
                   Send Another Inquiry
                 </button>
@@ -175,56 +139,59 @@ export default function ContactSection() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-1">Send a Direct Message</h3>
-                  <p className="text-xs text-stone-400">Recruiters, cafe owners, and hospitality partners are welcome.</p>
+                  <h3 className="text-2xl font-bold mb-1" style={{ color: 'var(--text-primary)' }}>Send a Direct Message</h3>
+                  <p className="text-xs" style={{ color: 'var(--text-muted)' }}>Recruiters, cafe owners, and hospitality partners are welcome.</p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-stone-300">Your Name</label>
+                    <label className="text-xs font-bold" style={{ color: 'var(--text-secondary)' }}>Your Name</label>
                     <input
                       type="text"
                       required
-                      placeholder="e.g. Cafe Manager / Hiring Lead"
+                      placeholder="e.g. Cafe Manager"
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[#18100C] border border-[#C89D66]/30 text-white placeholder-stone-600 text-sm focus:border-[#E6C594] focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none transition-colors"
+                      style={{ background: 'var(--input-bg)', border: '1px solid var(--border-default)', color: 'var(--text-primary)' }}
                     />
                   </div>
-
                   <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-stone-300">Your Email Address</label>
+                    <label className="text-xs font-bold" style={{ color: 'var(--text-secondary)' }}>Your Email</label>
                     <input
                       type="email"
                       required
                       placeholder="name@cafe.com"
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[#18100C] border border-[#C89D66]/30 text-white placeholder-stone-600 text-sm focus:border-[#E6C594] focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none transition-colors"
+                      style={{ background: 'var(--input-bg)', border: '1px solid var(--border-default)', color: 'var(--text-primary)' }}
                     />
                   </div>
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-stone-300">Subject</label>
+                  <label className="text-xs font-bold" style={{ color: 'var(--text-secondary)' }}>Subject</label>
                   <input
                     type="text"
                     required
                     value={formState.subject}
                     onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#18100C] border border-[#C89D66]/30 text-white placeholder-stone-600 text-sm focus:border-[#E6C594] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none transition-colors"
+                    style={{ background: 'var(--input-bg)', border: '1px solid var(--border-default)', color: 'var(--text-primary)' }}
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-stone-300">Message / Shift Inquiry</label>
+                  <label className="text-xs font-bold" style={{ color: 'var(--text-secondary)' }}>Message</label>
                   <textarea
                     required
                     rows={4}
-                    placeholder="Hello Sajan, we would love to discuss a Barista opportunity with our specialty coffee team..."
+                    placeholder="Hello Sajan, we would love to discuss a Barista opportunity..."
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#18100C] border border-[#C89D66]/30 text-white placeholder-stone-600 text-sm focus:border-[#E6C594] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none transition-colors"
+                    style={{ background: 'var(--input-bg)', border: '1px solid var(--border-default)', color: 'var(--text-primary)' }}
                   />
                 </div>
 

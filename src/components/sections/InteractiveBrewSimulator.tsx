@@ -79,19 +79,21 @@ export default function InteractiveBrewSimulator() {
   const aroma = Math.min(100, Math.max(40, Math.round(temperature * 1.05 - 5)));
 
   return (
-    <section id="brew-simulator" className="py-24 px-4 relative z-10 bg-[#0F0906]/60 backdrop-blur-md">
+    <section id="brew-simulator" className="py-24 px-4 relative z-10" style={{ background: 'var(--bg-secondary)' }}>
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Section Title */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#18100C] border border-[#C89D66]/30 text-xs font-bold text-[#E6C594]">
-            <Sliders className="w-3.5 h-3.5 text-[#C89D66]" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold"
+            style={{ background: 'var(--bg-card-solid)', border: '1px solid var(--border-default)', color: 'var(--text-accent)' }}
+          >
+            <Sliders className="w-3.5 h-3.5" style={{ color: 'var(--gold)' }} />
             INTERACTIVE EXPERIMENTAL BARISTA LAB
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+          <h2 className="text-3xl sm:text-4xl font-extrabold" style={{ color: 'var(--text-primary)' }}>
             Espresso Calibration <span className="text-gradient-amber">Simulator</span>
           </h2>
-          <p className="text-stone-400 text-sm sm:text-base">
-            Adjust Sajan's real-world barista brewing parameters (Dose, Yield, Temp) and observe live flavor extraction metrics.
+          <p className="text-sm sm:text-base" style={{ color: 'var(--text-muted)' }}>
+            Adjust Sajan&apos;s real-world barista brewing parameters (Dose, Yield, Temp) and observe live flavor extraction metrics.
           </p>
         </div>
 

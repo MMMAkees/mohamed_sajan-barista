@@ -1,9 +1,10 @@
 import React from 'react';
 
-export function InstagramIcon({ className = "w-5 h-5" }: { className?: string }) {
+export function InstagramIcon({ className = "w-5 h-5", style }: { className?: string; style?: React.CSSProperties }) {
   return (
     <svg
       className={className}
+      style={style}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

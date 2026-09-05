@@ -5,33 +5,39 @@ import Image from 'next/image';
 import { ArrowUp, Mail } from 'lucide-react';
 import { InstagramIcon } from '@/components/ui/InstagramIcon';
 import { BARISTA_PROFILE } from '@/data/baristaData';
+import { useTheme } from '@/context/ThemeContext';
 
 export default function Footer() {
+  const { theme } = useTheme();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <footer className="border-t border-[#C89D66]/20 bg-[#0B0705] dark:bg-[#0B0705] light:bg-[#FAF6F0] py-10 px-4 relative z-10">
+    <footer className="py-12 px-4 relative z-10" style={{ background: 'var(--bg-primary)', borderTop: '1px solid var(--border-default)' }}>
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
         {/* Brand with MS Monogram */}
         <div className="flex items-center gap-3">
-          <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-[#C89D66] p-0.5 bg-black shrink-0">
+          <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 p-0.5"
+            style={{ borderColor: 'var(--gold)', background: theme === 'dark' ? '#000' : '#fff' }}
+          >
             <Image
               src="/logo.png"
               alt="MS Monogram Logo"
               fill
               className="object-cover"
+              style={{ filter: theme === 'light' ? 'none' : 'invert(1)' }}
             />
           </div>
           <div>
-            <span className="font-bold text-white dark:text-white light:text-stone-900 text-base block">{BARISTA_PROFILE.name}</span>
-            <span className="text-xs text-[#C89D66] font-medium">Specialty Coffee Barista • Doha, Qatar</span>
+            <span className="font-bold text-base block" style={{ color: 'var(--text-primary)' }}>{BARISTA_PROFILE.name}</span>
+            <span className="text-xs font-medium" style={{ color: 'var(--gold)' }}>Specialty Coffee Barista • Doha, Qatar</span>
           </div>
         </div>
 
-        {/* Copyright Statement */}
-        <div className="text-xs text-stone-400 dark:text-stone-400 light:text-stone-600">
+        {/* Copyright */}
+        <div className="text-xs" style={{ color: 'var(--text-muted)' }}>
           <p>© {new Date().getFullYear()} Abdul Rahman Mohammed Sajan. All rights reserved.</p>
         </div>
 
@@ -41,7 +47,8 @@ export default function Footer() {
             href={BARISTA_PROFILE.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2.5 rounded-xl bg-[#18100C] dark:bg-[#18100C] light:bg-white border border-[#C89D66]/30 text-[#E6C594] light:text-[#7A4E1D] hover:bg-[#C89D66] hover:text-[#0B0705] transition-all"
+            className="p-2.5 rounded-xl border transition-all hover:opacity-80"
+            style={{ background: 'var(--bg-card-solid)', borderColor: 'var(--border-default)', color: 'var(--text-accent)' }}
             title="Instagram"
           >
             <InstagramIcon className="w-4 h-4" />
@@ -49,7 +56,8 @@ export default function Footer() {
 
           <a
             href={`mailto:${BARISTA_PROFILE.email}`}
-            className="p-2.5 rounded-xl bg-[#18100C] dark:bg-[#18100C] light:bg-white border border-[#C89D66]/30 text-[#E6C594] light:text-[#7A4E1D] hover:bg-[#C89D66] hover:text-[#0B0705] transition-all"
+            className="p-2.5 rounded-xl border transition-all hover:opacity-80"
+            style={{ background: 'var(--bg-card-solid)', borderColor: 'var(--border-default)', color: 'var(--text-accent)' }}
             title="Email"
           >
             <Mail className="w-4 h-4" />
@@ -57,7 +65,8 @@ export default function Footer() {
 
           <button
             onClick={scrollToTop}
-            className="p-2.5 rounded-xl bg-[#2E1E16] dark:bg-[#2E1E16] light:bg-[#E8DCCF] border border-[#C89D66]/40 text-[#E6C594] light:text-[#7A4E1D] hover:bg-[#C89D66] hover:text-[#0B0705] transition-all flex items-center gap-1.5 text-xs font-bold"
+            className="p-2.5 rounded-xl border transition-all hover:opacity-80 flex items-center gap-1.5 text-xs font-bold"
+            style={{ background: 'var(--bg-elevated)', borderColor: 'var(--border-default)', color: 'var(--text-accent)' }}
           >
             <ArrowUp className="w-4 h-4" />
             Top

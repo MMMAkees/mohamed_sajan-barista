@@ -39,7 +39,7 @@ export const BARISTA_PROFILE = {
   phone: "+974 6647 6221",
   email: "sajanmohammed777@gmail.com",
   instagramHandle: "mohamed_sajan_07",
-  instagramUrl: "https://www.instagram.com/mohamed_sajan_07/?hl=en",
+  instagramUrl: "https://www.instagram.com/mohamed_sajan_07/",
   imagePath: "/sajan.png",
   summary: `Dedicated and detail-oriented Specialty Coffee Barista with extensive progressive experience across premier specialty cafes in Sri Lanka and Qatar. Highly skilled in espresso extraction & calibration, microfoam milk texturing, latte art, and manual brew precision (V60, French Press). Recognized by upscale clientele and management for warm hospitality, product knowledge, speed, and flawless hygiene (HACCP) standards in high-footfall environments.`,
   stats: [
