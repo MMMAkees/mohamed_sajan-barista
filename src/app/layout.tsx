@@ -48,30 +48,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var theme = localStorage.getItem('sajan_theme');
-                  if (theme === 'light') {
-                    document.documentElement.classList.remove('dark');
-                    document.documentElement.classList.add('light');
-                  }
-                } catch(e) {}
-              })();
-            `,
-          }}
-        />
-      </head>
       <body
-        className="antialiased selection:bg-[#C89D66] selection:text-[#0B0705]"
-        style={{
-          backgroundColor: 'var(--bg-primary)',
-          color: 'var(--text-primary)',
-          transition: 'background-color 0.4s ease, color 0.4s ease',
-        }}
+        className="antialiased bg-[#0B0705] text-[#F5EAE0] selection:bg-[#C89D66] selection:text-[#0B0705]"
       >
         <ThemeProvider>{children}</ThemeProvider>
       </body>

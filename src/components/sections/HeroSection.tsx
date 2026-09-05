@@ -3,10 +3,9 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Coffee, MapPin, ArrowRight, Sparkles, Mail, ShieldCheck } from 'lucide-react';
+import { Coffee, MapPin, ArrowRight, Mail, ShieldCheck, Award } from 'lucide-react';
 import { InstagramIcon } from '@/components/ui/InstagramIcon';
 import { BARISTA_PROFILE } from '@/data/baristaData';
-import CoffeeCupCanvas from '@/components/3d/CoffeeCupCanvas';
 
 export default function HeroSection() {
   return (
@@ -119,54 +118,66 @@ export default function HeroSection() {
           </div>
         </motion.div>
 
-        {/* Right Column: Portrait + 3D Cup */}
+        {/* Right Column: Premium Barista Card */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="lg:col-span-5 relative flex flex-col items-center"
         >
-          {/* Portrait Image */}
-          <div className="relative w-64 h-80 sm:w-72 sm:h-96 rounded-3xl overflow-hidden shadow-2xl group"
-            style={{ border: '2px solid var(--border-accent)' }}
+          <div className="relative w-full max-w-sm rounded-3xl p-6 glass-panel border-2 shadow-2xl flex flex-col items-center gap-5"
+            style={{ borderColor: 'var(--border-accent)' }}
           >
-            <Image
-              src={BARISTA_PROFILE.imagePath}
-              alt={BARISTA_PROFILE.name}
-              fill
-              className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
-              priority
-            />
-
-            {/* MS Monogram Badge overlay */}
-            <div className="absolute top-3 right-3 w-10 h-10 rounded-full border-2 overflow-hidden shadow-lg p-0.5"
-              style={{ borderColor: 'var(--gold)', background: 'var(--bg-primary)' }}
+            {/* Portrait Frame */}
+            <div className="relative w-64 h-80 rounded-2xl overflow-hidden shadow-2xl border-2 group"
+              style={{ borderColor: 'var(--gold)' }}
             >
               <Image
-                src="/logo.png"
-                alt="MS Monogram Logo"
+                src={BARISTA_PROFILE.imagePath}
+                alt={BARISTA_PROFILE.name}
                 fill
-                className="object-cover"
+                className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                priority
               />
-            </div>
 
-            {/* Glass Overlay at bottom */}
-            <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-[#0B0705] via-[#0B0705]/80 to-transparent flex items-center justify-between">
-              <div>
-                <span className="text-xs font-bold text-white block">Abdul Rahman Sajan</span>
-                <span className="text-[10px] font-medium block" style={{ color: 'var(--gold)' }}>Pearl-Qatar • Porto Arabia</span>
-              </div>
-              <div className="w-8 h-8 rounded-full flex items-center justify-center"
-                style={{ background: 'rgba(200, 157, 102, 0.2)', border: '1px solid var(--gold)' }}
+              {/* MS Monogram Badge overlay */}
+              <div className="absolute top-3 right-3 w-10 h-10 rounded-full border-2 overflow-hidden shadow-lg p-0.5"
+                style={{ borderColor: 'var(--gold)', background: '#0B0705' }}
               >
-                <ShieldCheck className="w-4 h-4" style={{ color: 'var(--gold-bright)' }} />
+                <Image
+                  src="/logo.png"
+                  alt="MS Monogram Logo"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Overlay Glass Badge */}
+              <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-[#0B0705] via-[#0B0705]/80 to-transparent flex items-center justify-between">
+                <div>
+                  <span className="text-xs font-bold text-white block">Abdul Rahman Sajan</span>
+                  <span className="text-[10px] font-medium block" style={{ color: 'var(--gold)' }}>Pearl-Qatar • Porto Arabia</span>
+                </div>
+                <div className="w-8 h-8 rounded-full flex items-center justify-center"
+                  style={{ background: 'rgba(200, 157, 102, 0.2)', border: '1px solid var(--gold)' }}
+                >
+                  <ShieldCheck className="w-4 h-4" style={{ color: 'var(--gold-bright)' }} />
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* 3D Cup Canvas */}
-          <div className="w-full max-w-sm mt-2">
-            <CoffeeCupCanvas />
+            {/* Quick Barista Highlights */}
+            <div className="w-full flex items-center justify-between gap-2 px-2 pt-1 text-xs">
+              <div className="flex items-center gap-1.5 font-semibold" style={{ color: 'var(--text-accent)' }}>
+                <Award className="w-4 h-4 text-[#C89D66]" />
+                SCA Standards
+              </div>
+              <div className="w-1 h-1 rounded-full bg-[#C89D66]" />
+              <div className="flex items-center gap-1.5 font-semibold" style={{ color: 'var(--text-accent)' }}>
+                <Coffee className="w-4 h-4 text-[#C89D66]" />
+                Microfoam Master
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>

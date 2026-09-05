@@ -3,12 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone, MessageSquare, Sun, Moon } from 'lucide-react';
+import { Menu, X, Phone, MessageSquare } from 'lucide-react';
 import { BARISTA_PROFILE } from '@/data/baristaData';
-import { useTheme } from '@/context/ThemeContext';
 
 export default function Navbar() {
-  const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -42,7 +40,7 @@ export default function Navbar() {
         {/* Brand Logo with MS Monogram */}
         <a href="#" className="flex items-center gap-3 group">
           <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 p-0.5 shadow-lg group-hover:scale-105 transition-transform"
-            style={{ borderColor: 'var(--gold)', background: theme === 'dark' ? '#000' : '#fff' }}
+            style={{ borderColor: 'var(--gold)', background: '#000' }}
           >
             <Image
               src="/logo.png"
@@ -85,37 +83,8 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Actions & Theme Switcher */}
+        {/* Actions */}
         <div className="flex items-center gap-3">
-          {/* Telegram-style Toggle */}
-          <button
-            onClick={toggleTheme}
-            aria-label="Toggle Light and Dark Mode"
-            className="theme-toggle-btn w-14 h-8 rounded-full p-1 border flex items-center relative shadow-inner cursor-pointer"
-            style={{
-              background: 'var(--bg-elevated)',
-              borderColor: 'var(--border-default)',
-            }}
-          >
-            <motion.div
-              layout
-              transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-              className="w-6 h-6 rounded-full flex items-center justify-center shadow-md absolute"
-              style={{
-                background: theme === 'dark'
-                  ? 'linear-gradient(135deg, #C89D66, #E6C594)'
-                  : 'linear-gradient(135deg, #A87339, #7A4E1D)',
-                left: theme === 'dark' ? '4px' : 'calc(100% - 28px)',
-              }}
-            >
-              {theme === 'dark' ? (
-                <Moon className="w-3.5 h-3.5 text-[#0B0705]" />
-              ) : (
-                <Sun className="w-3.5 h-3.5 text-white" />
-              )}
-            </motion.div>
-          </button>
-
           {/* Quick WhatsApp Link */}
           <a
             href={`https://wa.me/${BARISTA_PROFILE.phone.replace(/[^0-9]/g, '')}`}
