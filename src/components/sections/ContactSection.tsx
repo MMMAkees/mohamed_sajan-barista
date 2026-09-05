@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
-import { Mail, Phone, MapPin, Send, MessageSquare, CheckCircle, Coffee, Download, FileText } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageSquare, CheckCircle, Coffee, Download, FileText, Loader2, AlertCircle } from 'lucide-react';
 import { InstagramIcon } from '@/components/ui/InstagramIcon';
 import { BARISTA_PROFILE } from '@/data/baristaData';
 
@@ -15,23 +15,55 @@ export default function ContactSection() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formState.name || !formState.email || !formState.message) return;
 
-    try {
-      confetti({
-        particleCount: 80,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#C89D66', '#E6C594', '#F4D09A', '#ffffff'],
-      });
-    } catch (err) {
-      console.error(err);
-    }
+    setIsSubmitting(true);
+    setErrorMsg(null);
 
-    setSubmitted(true);
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${BARISTA_PROFILE.email}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          _subject: `[Barista Portfolio] ${formState.subject}`,
+          message: formState.message,
+          _captcha: 'false',
+          _template: 'table',
+        }),
+      });
+
+      if (response.ok) {
+        try {
+          confetti({
+            particleCount: 80,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#C89D66', '#E6C594', '#F4D09A', '#ffffff'],
+          });
+        } catch (err) {
+          console.error(err);
+        }
+        setSubmitted(true);
+      } else {
+        const data = await response.json().catch(() => ({}));
+        setErrorMsg(data.message || 'Form submit service unavailable. Please click below to send via your email client.');
+      }
+    } catch (err) {
+      console.error('Form submission error:', err);
+      setErrorMsg('Could not reach form server. Please send directly using your email app below.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -175,6 +207,22 @@ export default function ContactSection() {
                   <p className="text-xs" style={{ color: 'var(--text-muted)' }}>Recruiters, cafe owners, and hospitality partners are welcome.</p>
                 </div>
 
+                {errorMsg && (
+                  <div className="p-4 rounded-xl text-xs space-y-2 border border-red-500/30 bg-red-500/10 text-red-300">
+                    <div className="flex items-center gap-2 font-bold text-red-400">
+                      <AlertCircle className="w-4 h-4 shrink-0" />
+                      <span>{errorMsg}</span>
+                    </div>
+                    <a
+                      href={`mailto:${BARISTA_PROFILE.email}?subject=${encodeURIComponent(formState.subject)}&body=${encodeURIComponent(`Name: ${formState.name}\nEmail: ${formState.email}\n\nMessage:\n${formState.message}`)}`}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-500/20 hover:bg-red-500/30 text-xs font-bold transition-all"
+                    >
+                      <Mail className="w-3.5 h-3.5" />
+                      Click here to send via Email App directly
+                    </a>
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
                     <label className="text-xs font-bold" style={{ color: 'var(--text-secondary)' }}>Your Name</label>
@@ -229,10 +277,20 @@ export default function ContactSection() {
 
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-2xl bg-gradient-to-r from-[#E6C594] via-[#C89D66] to-[#A07440] text-[#0B0705] font-bold text-sm shadow-xl shadow-[#C89D66]/25 hover:brightness-110 transition-all flex items-center justify-center gap-2"
+                  disabled={isSubmitting}
+                  className="w-full py-4 rounded-2xl bg-gradient-to-r from-[#E6C594] via-[#C89D66] to-[#A07440] text-[#0B0705] font-bold text-sm shadow-xl shadow-[#C89D66]/25 hover:brightness-110 disabled:opacity-60 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2"
                 >
-                  <Send className="w-4 h-4" />
-                  Send Inquiry Now
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      Sending Inquiry...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      Send Inquiry Now
+                    </>
+                  )}
                 </button>
               </form>
             )}
