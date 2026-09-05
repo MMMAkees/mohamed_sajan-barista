@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { ArrowUp, Mail } from 'lucide-react';
+import { ArrowUp, Mail, Download } from 'lucide-react';
 import { InstagramIcon } from '@/components/ui/InstagramIcon';
 import { BARISTA_PROFILE } from '@/data/baristaData';
 import { useTheme } from '@/context/ThemeContext';
@@ -42,6 +42,23 @@ export default function Footer() {
 
         {/* Actions & Back to top */}
         <div className="flex items-center gap-3">
+          <a
+            href="/Sajan_Mohammed_CV.pdf"
+            download="Sajan_Mohammed_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-3 py-2 rounded-xl border text-xs font-bold transition-all hover:scale-105 flex items-center gap-1.5"
+            style={{
+              background: 'rgba(200, 157, 102, 0.15)',
+              borderColor: 'var(--gold)',
+              color: 'var(--gold-bright)',
+            }}
+            title="Download Official CV PDF"
+          >
+            <Download className="w-3.5 h-3.5" />
+            CV PDF
+          </a>
+
           <a
             href={BARISTA_PROFILE.instagramUrl}
             target="_blank"

@@ -1,13 +1,15 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Coffee, MapPin, ArrowRight, Mail, ShieldCheck, Award } from 'lucide-react';
+import { Coffee, MapPin, ArrowRight, Mail, ShieldCheck, Award, Download, FileText } from 'lucide-react';
 import { InstagramIcon } from '@/components/ui/InstagramIcon';
 import { BARISTA_PROFILE } from '@/data/baristaData';
 
 export default function HeroSection() {
+  const [selectedHeroImg, setSelectedHeroImg] = useState(BARISTA_PROFILE.imagePath);
+
   return (
     <section className="relative min-h-screen pt-32 pb-20 px-4 flex items-center justify-center overflow-hidden">
       {/* Background Ambient Glows */}
@@ -84,8 +86,24 @@ export default function HeroSection() {
             </a>
 
             <a
+              href="/Sajan_Mohammed_CV.pdf"
+              download="Sajan_Mohammed_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3.5 rounded-2xl text-sm font-bold transition-all flex items-center gap-2 border shadow-lg hover:scale-[1.02]"
+              style={{
+                background: 'rgba(200, 157, 102, 0.15)',
+                color: 'var(--gold-bright)',
+                borderColor: 'var(--gold)',
+              }}
+            >
+              <Download className="w-4 h-4" />
+              Download CV
+            </a>
+
+            <a
               href="#brew-simulator"
-              className="px-6 py-3.5 rounded-2xl text-sm font-semibold transition-all flex items-center gap-2 backdrop-blur-md border"
+              className="px-5 py-3.5 rounded-2xl text-sm font-semibold transition-all flex items-center gap-2 backdrop-blur-md border"
               style={{
                 background: 'var(--glass-bg)',
                 color: 'var(--text-accent)',
@@ -133,7 +151,7 @@ export default function HeroSection() {
               style={{ borderColor: 'var(--gold)' }}
             >
               <Image
-                src={BARISTA_PROFILE.imagePath}
+                src={selectedHeroImg}
                 alt={BARISTA_PROFILE.name}
                 fill
                 className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
@@ -166,8 +184,36 @@ export default function HeroSection() {
               </div>
             </div>
 
+            {/* Interactive Photo Thumbnail Selector */}
+            <div className="w-full space-y-1.5">
+              <div className="flex items-center justify-between text-[11px] font-semibold" style={{ color: 'var(--text-muted)' }}>
+                <span>Photos of Sajan at Work</span>
+                <span className="text-[10px]" style={{ color: 'var(--gold)' }}>Click to view</span>
+              </div>
+              <div className="flex items-center justify-center gap-2">
+                {[
+                  BARISTA_PROFILE.imagePath,
+                  "/images/gallery/sajan-hot-chocolate.jpg",
+                  "/images/gallery/sajan-signature-mocktail.png",
+                  "/images/gallery/sajan-presenting-drink.png",
+                  "/images/gallery/sajan-shaking-beverage.png",
+                  "/images/gallery/sajan-bar-service.png",
+                ].map((imgSrc, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setSelectedHeroImg(imgSrc)}
+                    className={`relative w-9 h-9 rounded-lg overflow-hidden border-2 transition-all ${
+                      selectedHeroImg === imgSrc ? 'scale-110 border-[#E6C594] shadow-md' : 'opacity-60 border-transparent hover:opacity-100'
+                    }`}
+                  >
+                    <Image src={imgSrc} alt={`Sajan photo ${idx}`} fill className="object-cover" />
+                  </button>
+                ))}
+              </div>
+            </div>
+
             {/* Quick Barista Highlights */}
-            <div className="w-full flex items-center justify-between gap-2 px-2 pt-1 text-xs">
+            <div className="w-full flex items-center justify-between gap-2 px-2 pt-1 text-xs" style={{ borderTop: '1px solid var(--border-default)' }}>
               <div className="flex items-center gap-1.5 font-semibold" style={{ color: 'var(--text-accent)' }}>
                 <Award className="w-4 h-4 text-[#C89D66]" />
                 SCA Standards

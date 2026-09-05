@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone, MessageSquare } from 'lucide-react';
+import { Menu, X, Phone, MessageSquare, Download, FileText } from 'lucide-react';
 import { BARISTA_PROFILE } from '@/data/baristaData';
 
 export default function Navbar() {
@@ -85,6 +85,23 @@ export default function Navbar() {
 
         {/* Actions */}
         <div className="flex items-center gap-3">
+          {/* Download CV Link */}
+          <a
+            href="/Sajan_Mohammed_CV.pdf"
+            download="Sajan_Mohammed_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:flex px-3.5 py-2 rounded-xl text-xs font-bold border transition-all items-center gap-1.5 hover:scale-105"
+            style={{
+              color: 'var(--gold-bright)',
+              background: 'rgba(200, 157, 102, 0.12)',
+              borderColor: 'var(--gold)',
+            }}
+          >
+            <Download className="w-3.5 h-3.5" />
+            Download CV
+          </a>
+
           {/* Quick WhatsApp Link */}
           <a
             href={`https://wa.me/${BARISTA_PROFILE.phone.replace(/[^0-9]/g, '')}`}
@@ -154,6 +171,23 @@ export default function Navbar() {
             </div>
 
             <div className="pt-4 border-t flex flex-col gap-3" style={{ borderColor: 'var(--border-default)' }}>
+              <a
+                href="/Sajan_Mohammed_CV.pdf"
+                download="Sajan_Mohammed_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full py-3 rounded-xl border font-bold text-center text-sm flex items-center justify-center gap-2"
+                style={{
+                  color: 'var(--gold-bright)',
+                  background: 'rgba(200, 157, 102, 0.15)',
+                  borderColor: 'var(--gold)',
+                }}
+              >
+                <Download className="w-4 h-4" />
+                Download CV (PDF)
+              </a>
+
               <a
                 href={`tel:${BARISTA_PROFILE.phone}`}
                 className="w-full py-3 rounded-xl bg-gradient-to-r from-[#E6C594] to-[#C89D66] text-[#0B0705] font-bold text-center text-sm flex items-center justify-center gap-2"

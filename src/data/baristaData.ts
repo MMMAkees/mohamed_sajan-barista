@@ -239,7 +239,90 @@ export const SIGNATURE_BREWS: SignatureBrew[] = [
   }
 ];
 
+export const ACTION_PHOTOS = [
+  {
+    id: "hot-chocolate",
+    title: "Decadent Specialty Hot Chocolate",
+    category: "Signature Beverage",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Sajan presenting a rich artisanal hot chocolate topped with velvety whipped cream, toasted marshmallows & chocolate drizzle.",
+    imagePath: "/images/gallery/sajan-hot-chocolate.jpg",
+    accentColor: "from-amber-800 to-amber-950"
+  },
+  {
+    id: "signature-mocktail",
+    title: "Layered Sunrise Specialty Beverage",
+    category: "Layering & Mixology",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Precision craft of a multi-layered citrus & espresso cold brew mocktail with distinct color gradients.",
+    imagePath: "/images/gallery/sajan-signature-mocktail.png",
+    accentColor: "from-orange-700 to-red-900"
+  },
+  {
+    id: "presenting-drink",
+    title: "Counter Hospitality & Service",
+    category: "Hospitality",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Serving handcrafted specialty drinks directly to upscale patrons with warm hospitality.",
+    imagePath: "/images/gallery/sajan-presenting-drink.png",
+    accentColor: "from-amber-600 to-amber-900"
+  },
+  {
+    id: "shaking-beverage",
+    title: "Precision Shaker Aeration",
+    category: "Beverage Craft",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Executing aerated shake technique for chilled espresso and specialty milk beverages.",
+    imagePath: "/images/gallery/sajan-shaking-beverage.png",
+    accentColor: "from-stone-700 to-amber-900"
+  },
+  {
+    id: "bar-service",
+    title: "Live Specialty Bar Operations",
+    category: "Barista Action",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "In-action behind the commercial espresso bar at Pearl-Qatar, maintaining speed & pristine station sanitation.",
+    imagePath: "/images/gallery/sajan-bar-service.png",
+    accentColor: "from-amber-900 to-stone-900"
+  }
+];
+
 export const LATTE_ART_GALLERY = [
+  {
+    title: "Decadent Specialty Hot Chocolate",
+    category: "Signature Beverage",
+    description: "Sajan presenting a rich artisanal hot chocolate topped with velvety microfoam & chocolate drizzle at F-Mart.",
+    imagePath: "/images/gallery/sajan-hot-chocolate.jpg",
+    accentColor: "from-amber-800 to-amber-950"
+  },
+  {
+    title: "Layered Sunrise Cold Brew Mocktail",
+    category: "Mixology & Layering",
+    description: "Precision dual-layered specialty cold beverage featuring clean color separation & citrus aromatics.",
+    imagePath: "/images/gallery/sajan-signature-mocktail.png",
+    accentColor: "from-orange-700 to-red-900"
+  },
+  {
+    title: "Live Specialty Bar Operations",
+    category: "Barista In-Action",
+    description: "Crafting beverages live behind the bar at Pearl-Qatar, Doha.",
+    imagePath: "/images/gallery/sajan-presenting-drink.png",
+    accentColor: "from-amber-600 to-amber-900"
+  },
+  {
+    title: "Precision Shaker Aeration",
+    category: "Beverage Craft",
+    description: "High energy shaker technique aerating iced specialty espresso drinks.",
+    imagePath: "/images/gallery/sajan-shaking-beverage.png",
+    accentColor: "from-stone-700 to-amber-900"
+  },
+  {
+    title: "Counter Operations & Sanitation",
+    category: "Live Bar Operations",
+    description: "Behind the counter at F-Mart Boutique Supermarket espresso bar.",
+    imagePath: "/images/gallery/sajan-bar-service.png",
+    accentColor: "from-amber-900 to-stone-900"
+  },
   {
     title: "Crisp 5-Tier Rosetta",
     category: "Latte Art",
@@ -260,12 +343,5 @@ export const LATTE_ART_GALLERY = [
     description: "Advanced free-pour swan silhouette with flowing wing feathers and delicate head definition.",
     imagePath: "/images/latte-art/swan-motif.jpg",
     accentColor: "from-yellow-700 to-amber-800"
-  },
-  {
-    title: "Precision V60 Bloom",
-    category: "Brew Technique",
-    description: "45-second bloom stage releasing trapped CO2 for floral single-origin beans.",
-    imagePath: "/images/latte-art/v60-bloom.jpg",
-    accentColor: "from-amber-600 to-amber-950"
   }
 ];

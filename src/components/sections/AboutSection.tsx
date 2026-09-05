@@ -1,11 +1,14 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { BARISTA_PROFILE } from '@/data/baristaData';
-import { Globe, Heart, Shield, CheckCircle2, Sparkles, MapPin, Coffee } from 'lucide-react';
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
+import { BARISTA_PROFILE, ACTION_PHOTOS } from '@/data/baristaData';
+import { Globe, Heart, Shield, CheckCircle2, Sparkles, MapPin, Coffee, Camera, Maximize2, X } from 'lucide-react';
 
 export default function AboutSection() {
+  const [activePhoto, setActivePhoto] = useState<typeof ACTION_PHOTOS[0] | null>(null);
+
   return (
     <section id="about" className="py-24 px-4 relative z-10">
       <div className="max-w-6xl mx-auto space-y-16">
@@ -23,6 +26,55 @@ export default function AboutSection() {
           <p className="text-sm sm:text-base leading-relaxed" style={{ color: 'var(--text-muted)' }}>
             Bridging international cafe cultures from Sri Lanka to the luxury shores of Pearl-Qatar.
           </p>
+        </div>
+
+        {/* Real Action Photos Showcase Row */}
+        <div className="space-y-4">
+          <div className="flex items-center justify-between px-2">
+            <h3 className="text-xl font-bold flex items-center gap-2" style={{ color: 'var(--text-primary)' }}>
+              <Camera className="w-5 h-5" style={{ color: 'var(--gold)' }} />
+              Live Bar Operations at F-Mart (Pearl-Qatar)
+            </h3>
+            <span className="text-xs font-semibold" style={{ color: 'var(--gold)' }}>
+              5 Authentic Photos
+            </span>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {ACTION_PHOTOS.map((photo, index) => (
+              <motion.div
+                key={photo.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                onClick={() => setActivePhoto(photo)}
+                className="relative h-56 rounded-2xl overflow-hidden glass-panel border-2 cursor-pointer group shadow-lg"
+                style={{ borderColor: 'var(--border-accent)' }}
+              >
+                <Image
+                  src={photo.imagePath}
+                  alt={photo.title}
+                  fill
+                  className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+
+                <div className="absolute top-2 right-2 w-7 h-7 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                  <Maximize2 className="w-3.5 h-3.5" />
+                </div>
+
+                <div className="absolute bottom-3 inset-x-3 text-left">
+                  <span className="text-[9px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-md bg-black/70 text-[#E6C594] border border-[#C89D66]/30 inline-block mb-1">
+                    {photo.category}
+                  </span>
+                  <h4 className="text-xs font-bold text-white truncate leading-snug">
+                    {photo.title}
+                  </h4>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
@@ -122,6 +174,55 @@ export default function AboutSection() {
           </motion.div>
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {activePhoto && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setActivePhoto(null)}
+            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 cursor-pointer"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-2xl w-full glass-panel rounded-3xl overflow-hidden shadow-2xl border-2"
+              style={{ borderColor: 'var(--border-accent)' }}
+            >
+              <button
+                onClick={() => setActivePhoto(null)}
+                className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/70 backdrop-blur-md flex items-center justify-center text-white hover:bg-black transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="relative w-full h-[65vh] bg-black">
+                <Image
+                  src={activePhoto.imagePath}
+                  alt={activePhoto.title}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+
+              <div className="p-6 bg-[#120B08] space-y-2 border-t border-[#C89D66]/30">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs uppercase font-extrabold tracking-wider px-3 py-0.5 rounded-full bg-[#C89D66]/20 text-[#E6C594]">
+                    {activePhoto.category}
+                  </span>
+                  <span className="text-xs font-semibold text-gray-400">• {activePhoto.location}</span>
+                </div>
+                <h4 className="text-xl font-bold text-white">{activePhoto.title}</h4>
+                <p className="text-xs text-[#C4B8AB] leading-relaxed">{activePhoto.description}</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

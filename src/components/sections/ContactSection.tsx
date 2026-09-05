@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
-import { Mail, Phone, MapPin, Send, MessageSquare, CheckCircle, Coffee, Sliders } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageSquare, CheckCircle, Coffee, Download, FileText } from 'lucide-react';
 import { InstagramIcon } from '@/components/ui/InstagramIcon';
 import { BARISTA_PROFILE } from '@/data/baristaData';
 
@@ -66,6 +66,38 @@ export default function ContactSection() {
                 <Coffee className="w-6 h-6" style={{ color: 'var(--gold)' }} />
                 Direct Communication
               </h3>
+
+              {/* Featured CV Download Card */}
+              <a
+                href="/Sajan_Mohammed_CV.pdf"
+                download="Sajan_Mohammed_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-4 rounded-2xl border-2 transition-all hover:scale-[1.02] shadow-xl group"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(200, 157, 102, 0.2), rgba(120, 74, 40, 0.15))',
+                  borderColor: 'var(--gold)',
+                }}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center text-[#0B0705] bg-gradient-to-r from-[#E6C594] to-[#C89D66] font-bold shadow-md">
+                    <FileText className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-extrabold uppercase tracking-wider block" style={{ color: 'var(--gold-bright)' }}>
+                      Official Curriculum Vitae
+                    </span>
+                    <span className="text-sm font-bold block" style={{ color: 'var(--text-primary)' }}>
+                      Download CV (PDF Format)
+                    </span>
+                  </div>
+                </div>
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center transition-transform group-hover:translate-y-0.5"
+                  style={{ background: 'var(--gold)', color: '#0B0705' }}
+                >
+                  <Download className="w-4 h-4" />
+                </div>
+              </a>
 
               <div className="space-y-4">
                 {[
