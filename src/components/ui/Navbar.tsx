@@ -49,7 +49,6 @@ export default function Navbar() {
               alt="MS Monogram Logo"
               fill
               className="object-cover"
-              style={{ filter: theme === 'light' ? 'none' : 'invert(1)' }}
               priority
             />
           </div>

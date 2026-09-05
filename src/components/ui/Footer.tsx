@@ -27,7 +27,6 @@ export default function Footer() {
               alt="MS Monogram Logo"
               fill
               className="object-cover"
-              style={{ filter: theme === 'light' ? 'none' : 'invert(1)' }}
             />
           </div>
           <div>

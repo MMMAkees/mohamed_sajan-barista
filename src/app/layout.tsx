@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Abdul Rahman Mohammed Sajan' }],
   icons: {
-    icon: '/icon.png',
-    shortcut: '/icon.png',
-    apple: '/icon.png',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-icon.png',
   },
   openGraph: {
     title: 'Abdul Rahman Mohammed Sajan — Specialty Barista Portfolio',
@@ -47,8 +47,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className="bg-[#0B0705] dark:bg-[#0B0705] light:bg-[#FAF6F0] text-[#F5EAE0] dark:text-[#F5EAE0] light:text-[#1A100A] antialiased selection:bg-[#C89D66] selection:text-[#0B0705]">
+    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('sajan_theme');
+                  if (theme === 'light') {
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.classList.add('light');
+                  }
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body
+        className="antialiased selection:bg-[#C89D66] selection:text-[#0B0705]"
+        style={{
+          backgroundColor: 'var(--bg-primary)',
+          color: 'var(--text-primary)',
+          transition: 'background-color 0.4s ease, color 0.4s ease',
+        }}
+      >
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
