@@ -29,6 +29,27 @@ export interface SignatureBrew {
   latteArtPattern?: string;
 }
 
+export interface EducationItem {
+  id: string;
+  degree: string;
+  institution: string;
+  location: string;
+  year: string;
+  description: string;
+}
+
+export interface CertificationItem {
+  id: string;
+  title: string;
+  institution: string;
+  studentNo?: string;
+  duration?: string;
+  year: string;
+  badge: string;
+  description: string;
+  skillsCovered: string[];
+}
+
 export const BARISTA_PROFILE = {
   name: "Abdul Rahman Mohammed Sajan",
   shortName: "Sajan",
@@ -49,11 +70,45 @@ export const BARISTA_PROFILE = {
     { value: "100%", label: "HACCP & Hygiene Rating" },
   ],
   languages: [
-    { name: "Tamil", level: "Native Speaker", percent: 100 },
-    { name: "English", level: "Fluent Professional", percent: 95 },
+    { name: "Tamil", level: "Native", percent: 100 },
+    { name: "English", level: "Fluent", percent: 95 },
     { name: "Sinhala", level: "Conversational", percent: 75 },
   ],
 };
+
+export const EDUCATION_LIST: EducationItem[] = [
+  {
+    id: "gce-ol",
+    degree: "GCE Ordinary Level (O/L)",
+    institution: "Al-Misbah Maha Vidyalaya",
+    location: "Kalmunai, Sri Lanka",
+    year: "2020",
+    description: "Completed secondary school education with foundational studies in language, science, and mathematics."
+  }
+];
+
+export const CERTIFICATIONS_LIST: CertificationItem[] = [
+  {
+    id: "barista-cert",
+    title: "Basic Certificate for Barista",
+    institution: "Colombo Bartender & Barista School (Pvt.) Ltd.",
+    studentNo: "BCB/CW/87/06",
+    duration: "2 Months (October 2024 - December 2024)",
+    year: "2024",
+    badge: "Barista Skills",
+    description: "Comprehensive 2-month professional training in barista skills, covering espresso extraction, milk texturing, coffee grinder calibration, manual brewing techniques, and customer service excellence.",
+    skillsCovered: ["Espresso Calibration", "Milk Texturing", "Coffee Science", "Manual Brews", "Counter Management"]
+  },
+  {
+    id: "haccp-cert",
+    title: "HACCP / ISO 22000 Based Food Safety Certificate",
+    institution: "Colombo Bartender & Barista School (Pvt.) Ltd.",
+    year: "2024",
+    badge: "Food Safety & Hygiene",
+    description: "Intensive HACCP & ISO 22000 food safety training programme and written assessment. Certified in food hygiene standards, cross-contamination prevention, equipment sanitization, and food safety risk management.",
+    skillsCovered: ["HACCP Compliance", "ISO 22000 Standards", "Hygiene & Sanitation", "Cross-Contamination Prevention", "Equipment Descaling"]
+  }
+];
 
 export const WORK_EXPERIENCES: ExperienceItem[] = [
   {
