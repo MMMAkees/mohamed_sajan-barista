@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Abdul Rahman Mohammed Sajan — Specialty Coffee Barista 3D Portfolio
 
-## Getting Started
+![Sajan Specialty Barista](public/sajan.png)
 
-First, run the development server:
+A high-end, 3D interactive, visually stunning personal portfolio website crafted for **Abdul Rahman Mohammed Sajan** (Specialty Coffee Barista).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Built with **Next.js 14 (App Router)**, **TypeScript**, **Tailwind CSS**, **Framer Motion**, and **Three.js / React Three Fiber**.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌟 Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **3D Interactive Coffee Canvas**: Realistic procedural 3D espresso cup model with floating coffee beans and rising particle steam rendered with **Three.js & React Three Fiber**.
+- **Interactive Espresso Calibration Simulator**: Real-time barista lab allowing visitors and recruiters to adjust dose weight (g), liquid yield (g), and water brew temperature (°C) to calculate extraction ratios, tasting note profiles, and live status meters.
+- **Ambient Web Audio Synthesizer**: Realistic coffee brew sound generator using the browser Web Audio API.
+- **Interactive Career Timeline**: Highlighting barista experience at **F-Mart Boutique Supermarket** (Pearl-Qatar, Porto Arabia, Doha) and **Grind** (Colombo, Sri Lanka).
+- **Core Competencies & Craft Meters**: Progress indicators for Espresso Extraction, Microfoam Milk Texturing, V60 Manual Pour-overs, HACCP Food Safety, POS & Cash Reconciliation, and Shift Leadership.
+- **Multilingual Hospitality Badges**: English (Fluent), Tamil (Native), Sinhala (Conversational).
+- **Editable Education Section**: Customizable placeholder section ready for future certifications (SCA / Barista Guild) and academic details.
+- **Contact & Recruitment Panel**: Direct WhatsApp integration (`+974 6647 6221`), direct call link, Instagram handle (`@sajanBarista`), location map badges, and client-side golden confetti form celebration.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework**: Next.js 14+ (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS, Glassmorphism, Luxury Dark Espresso Theme
+- **3D & Canvas**: Three.js, `@react-three/fiber`, `@react-three/drei`
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Effects**: Canvas Confetti
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🛠️ Local Development Setup
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/MMMAkees/mohamed_sajan-barista.git
+   cd mohamed_sajan-barista
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Install dependencies**:
+   ```bash
+   npm install --legacy-peer-deps
+   ```
+
+3. **Start the local development server**:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## 📬 Contact & Portfolio Owner
+
+- **Barista**: Abdul Rahman Mohammed Sajan
+- **Location**: Doha, Qatar
+- **Phone / WhatsApp**: +974 6647 6221
+- **Email**: sajanmohammed777@gmail.com
+- **Instagram**: [@sajanBarista](https://instagram.com/sajanBarista)
