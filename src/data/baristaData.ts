@@ -244,24 +244,28 @@ export const LATTE_ART_GALLERY = [
     title: "Crisp 5-Tier Rosetta",
     category: "Latte Art",
     description: "High contrast microfoam pour showcasing symmetrical leaf patterns and defined base ring.",
+    imagePath: "/images/latte-art/rosetta.jpg",
     accentColor: "from-amber-700 to-amber-900"
   },
   {
     title: "Layered 4-Stack Tulip",
     category: "Latte Art",
     description: "Bold push pours forming clean layered hearts with high glossy sheen.",
+    imagePath: "/images/latte-art/layered-tulip.jpg",
     accentColor: "from-orange-800 to-amber-700"
   },
   {
     title: "Majestic Swan Motif",
     category: "Latte Art",
     description: "Advanced free-pour swan silhouette with flowing wing feathers and delicate head definition.",
+    imagePath: "/images/latte-art/swan-motif.jpg",
     accentColor: "from-yellow-700 to-amber-800"
   },
   {
     title: "Precision V60 Bloom",
     category: "Brew Technique",
     description: "45-second bloom stage releasing trapped CO2 for floral single-origin beans.",
+    imagePath: "/images/latte-art/v60-bloom.jpg",
     accentColor: "from-amber-600 to-amber-950"
   }
 ];
