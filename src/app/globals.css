@@ -4,23 +4,23 @@
   :root {
     --background: #0B0705;
     --foreground: #F5EAE0;
-    --espresso-dark: #0F0906;
-    --espresso-card: #18100C;
-    --espresso-border: rgba(200, 157, 102, 0.18);
-    --amber-gold: #C89D66;
-    --amber-bright: #E6C594;
-    --crema-glow: rgba(230, 197, 148, 0.25);
+    --card-bg: rgba(24, 16, 12, 0.75);
+    --card-border: rgba(200, 157, 102, 0.2);
+    --text-primary: #F5EAE0;
+    --text-muted: #A89B90;
+    --accent-gold: #C89D66;
+    --accent-bright: #E6C594;
   }
 
   html.light {
     --background: #FAF6F0;
     --foreground: #1A100A;
-    --espresso-dark: #F3ECE2;
-    --espresso-card: #FFFFFF;
-    --espresso-border: rgba(180, 125, 60, 0.25);
-    --amber-gold: #A87339;
-    --amber-bright: #7A4E1D;
-    --crema-glow: rgba(168, 115, 57, 0.15);
+    --card-bg: rgba(255, 255, 255, 0.92);
+    --card-border: rgba(180, 125, 60, 0.25);
+    --text-primary: #1A100A;
+    --text-muted: #6B5B50;
+    --accent-gold: #B8762D;
+    --accent-bright: #8C531F;
   }
 
   body {
@@ -54,18 +54,16 @@ html.light ::-webkit-scrollbar-thumb {
 
 /* Glassmorphism Classes for Dark and Light Modes */
 .glass-panel {
-  background: rgba(24, 16, 12, 0.7);
+  background: var(--card-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(200, 157, 102, 0.2);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html.light .glass-panel {
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(180, 125, 60, 0.25);
-  box-shadow: 0 15px 35px rgba(168, 115, 57, 0.08);
+  box-shadow: 0 10px 30px rgba(168, 115, 57, 0.08);
 }
 
 .glass-panel-hover:hover {
@@ -75,8 +73,35 @@ html.light .glass-panel {
 }
 
 html.light .glass-panel-hover:hover {
-  border-color: rgba(168, 115, 57, 0.5);
-  box-shadow: 0 10px 30px rgba(168, 115, 57, 0.15);
+  border-color: rgba(184, 118, 45, 0.5);
+  box-shadow: 0 10px 30px rgba(184, 118, 45, 0.15);
+}
+
+/* Text Overrides for Light Mode */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light .text-white {
+  color: #1A100A !important;
+}
+
+html.light p,
+html.light .text-stone-300,
+html.light .text-stone-400 {
+  color: #594A40 !important;
+}
+
+html.light input,
+html.light textarea {
+  background-color: #FFFFFF !important;
+  color: #1A100A !important;
+  border-color: rgba(184, 118, 45, 0.3) !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #9E8E82 !important;
 }
 
 .text-gradient-amber {
@@ -119,20 +144,4 @@ html.light .text-gradient-amber {
 
 .animate-steam {
   animation: steam-rise 3s infinite ease-out;
-}
-
-/* 3D Cup Spotlight Pedestal Pulse Glow */
-@keyframes pedestal-glow {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.15);
-    opacity: 0.95;
-  }
-}
-
-.animate-pedestal {
-  animation: pedestal-glow 4s infinite ease-in-out;
 }
