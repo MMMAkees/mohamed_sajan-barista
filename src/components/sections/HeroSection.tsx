@@ -3,7 +3,8 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Coffee, MapPin, Award, ArrowRight, Download, Sparkles, Instagram, Mail, ShieldCheck } from 'lucide-react';
+import { Coffee, MapPin, Award, ArrowRight, Download, Sparkles, Mail, ShieldCheck } from 'lucide-react';
+import { InstagramIcon } from '@/components/ui/InstagramIcon';
 import { BARISTA_PROFILE } from '@/data/baristaData';
 import CoffeeCupCanvas from '@/components/3d/CoffeeCupCanvas';
 
@@ -105,7 +106,7 @@ export default function HeroSection() {
               className="p-3.5 rounded-2xl bg-[#18100C]/60 hover:bg-[#C89D66]/20 border border-white/10 text-stone-300 hover:text-white transition-all"
               title="Instagram @sajanBarista"
             >
-              <Instagram className="w-5 h-5 text-[#C89D66]" />
+              <InstagramIcon className="w-5 h-5 text-[#C89D66]" />
             </a>
           </div>
         </motion.div>

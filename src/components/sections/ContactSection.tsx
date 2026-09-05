@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
-import { Mail, Phone, MapPin, Instagram, Send, MessageSquare, CheckCircle, Sparkles, Coffee } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageSquare, CheckCircle, Sparkles, Coffee } from 'lucide-react';
+import { InstagramIcon } from '@/components/ui/InstagramIcon';
 import { BARISTA_PROFILE } from '@/data/baristaData';
 
 export default function ContactSection() {
@@ -125,7 +126,7 @@ export default function ContactSection() {
                   className="flex items-center gap-4 p-4 rounded-2xl bg-[#18100C]/80 border border-[#C89D66]/30 hover:border-[#C89D66] transition-all group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-[#2E1E16] border border-[#C89D66]/40 flex items-center justify-center text-[#E6C594] shrink-0 group-hover:scale-105 transition-transform">
-                    <Instagram className="w-5 h-5 text-[#C89D66]" />
+                    <InstagramIcon className="w-5 h-5 text-[#C89D66]" />
                   </div>
                   <div>
                     <span className="text-xs text-stone-400 font-medium block">Instagram Handle</span>

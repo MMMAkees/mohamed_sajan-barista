@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
-import { Coffee, ArrowUp, Instagram, Mail, Phone } from 'lucide-react';
+import { Coffee, ArrowUp, Mail, Phone } from 'lucide-react';
+import { InstagramIcon } from '@/components/ui/InstagramIcon';
 import { BARISTA_PROFILE } from '@/data/baristaData';
 
 export default function Footer() {
@@ -38,7 +38,7 @@ export default function Footer() {
             className="p-2.5 rounded-xl bg-[#18100C] border border-[#C89D66]/30 text-[#E6C594] hover:bg-[#C89D66] hover:text-[#0B0705] transition-all"
             title="Instagram"
           >
-            <Instagram className="w-4 h-4" />
+            <InstagramIcon className="w-4 h-4" />
           </a>
 
           <a
