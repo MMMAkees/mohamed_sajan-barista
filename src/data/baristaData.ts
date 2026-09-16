@@ -284,49 +284,184 @@ export const ACTION_PHOTOS = [
     accentColor: "from-orange-800 to-amber-700"
   },
   {
-    id: "hot-chocolate",
-    title: "Decadent Specialty Hot Chocolate",
-    category: "Signature Beverage",
+    id: "wa-0143",
+    title: "Specialty Espresso Dial-in",
+    category: "Barista Action",
     location: "F-Mart Boutique, Pearl-Qatar",
-    description: "Sajan presenting a rich artisanal hot chocolate topped with velvety whipped cream, toasted marshmallows & chocolate drizzle.",
-    imagePath: "/images/gallery/sajan-hot-chocolate.jpg",
+    description: "Live espresso extraction and grind calibration behind the counter at Pearl-Qatar.",
+    imagePath: "/images/gallery/IMG-20260916-WA0143.jpg",
     accentColor: "from-amber-800 to-amber-950"
   },
   {
-    id: "signature-mocktail",
-    title: "Layered Sunrise Specialty Beverage",
-    category: "Layering & Mixology",
+    id: "wa-0204",
+    title: "Microfoam Latte Art Creation",
+    category: "Latte Art",
     location: "F-Mart Boutique, Pearl-Qatar",
-    description: "Precision craft of a multi-layered citrus & espresso cold brew mocktail with distinct color gradients.",
-    imagePath: "/images/gallery/sajan-signature-mocktail.png",
-    accentColor: "from-orange-700 to-red-900"
+    description: "Free-pour latte art presentation in a specialty coffee cup.",
+    imagePath: "/images/gallery/IMG-20260916-WA0204.jpg",
+    accentColor: "from-amber-700 to-amber-900"
   },
   {
-    id: "presenting-drink",
-    title: "Counter Hospitality & Service",
-    category: "Hospitality",
+    id: "wa-0205",
+    title: "Filter Pour-Over Precision",
+    category: "Manual Brew",
     location: "F-Mart Boutique, Pearl-Qatar",
-    description: "Serving handcrafted specialty drinks directly to upscale patrons with warm hospitality.",
-    imagePath: "/images/gallery/sajan-presenting-drink.png",
-    accentColor: "from-amber-600 to-amber-900"
+    description: "Single-origin pour-over brewing technique showcasing bloom timing.",
+    imagePath: "/images/gallery/IMG-20260916-WA0205.jpg",
+    accentColor: "from-amber-900 to-stone-900"
   },
   {
-    id: "shaking-beverage",
-    title: "Precision Shaker Aeration",
-    category: "Beverage Craft",
+    id: "wa-0206",
+    title: "Cold Specialty Coffee Brew",
+    category: "Signature Beverage",
     location: "F-Mart Boutique, Pearl-Qatar",
-    description: "Executing aerated shake technique for chilled espresso and specialty milk beverages.",
-    imagePath: "/images/gallery/sajan-shaking-beverage.png",
+    description: "Chilled specialty espresso beverage served over slow-melt ice.",
+    imagePath: "/images/gallery/IMG-20260916-WA0206.jpg",
+    accentColor: "from-amber-800 to-amber-950"
+  },
+  {
+    id: "wa-0207",
+    title: "Espresso Bar Workstation",
+    category: "Cafe Operations",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Commercial espresso machine calibration and clean workstation setup.",
+    imagePath: "/images/gallery/IMG-20260916-WA0207.jpg",
     accentColor: "from-stone-700 to-amber-900"
   },
   {
-    id: "bar-service",
-    title: "Live Specialty Bar Operations",
+    id: "wa-0208",
+    title: "Velvety Cappuccino Pour",
+    category: "Latte Art",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Silky 62°C milk texturing with crisp heart motif pour.",
+    imagePath: "/images/gallery/IMG-20260916-WA0208.jpg",
+    accentColor: "from-orange-800 to-amber-700"
+  },
+  {
+    id: "wa-0210",
+    title: "Layered Iced Specialty Drink",
+    category: "Signature Beverage",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Multi-layered cold brew specialty drink with distinct visual gradient.",
+    imagePath: "/images/gallery/IMG-20260916-WA0210.jpg",
+    accentColor: "from-amber-800 to-amber-950"
+  },
+  {
+    id: "wa-0211",
+    title: "Commercial Steam Wand Microfoam",
     category: "Barista Action",
     location: "F-Mart Boutique, Pearl-Qatar",
-    description: "In-action behind the commercial espresso bar at Pearl-Qatar, maintaining speed & pristine station sanitation.",
-    imagePath: "/images/gallery/sajan-bar-service.png",
+    description: "Steam wand microfoam texturing technique for optimal velvety mouthfeel.",
+    imagePath: "/images/gallery/IMG-20260916-WA0211.jpg",
+    accentColor: "from-amber-600 to-amber-900"
+  },
+  {
+    id: "wa-0212",
+    title: "Multi-Stack Tulip Pour",
+    category: "Latte Art",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "High-contrast multi-layer tulip motif poured in ceramic cup.",
+    imagePath: "/images/gallery/IMG-20260916-WA0212.jpg",
+    accentColor: "from-amber-700 to-amber-900"
+  },
+  {
+    id: "wa-0213",
+    title: "Artisanal Hot Chocolate",
+    category: "Signature Beverage",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Specialty hot chocolate with chocolate drizzle and microfoam top.",
+    imagePath: "/images/gallery/IMG-20260916-WA0213.jpg",
+    accentColor: "from-amber-800 to-amber-950"
+  },
+  {
+    id: "wa-0214",
+    title: "V60 Drip Extraction",
+    category: "Manual Brew",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "V60 manual drip brewing accentuating single-origin flavor notes.",
+    imagePath: "/images/gallery/IMG-20260916-WA0214.jpg",
     accentColor: "from-amber-900 to-stone-900"
+  },
+  {
+    id: "wa-0216",
+    title: "Barista Hospitality Service",
+    category: "Hospitality",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Counter service and guest engagement at F-Mart Boutique Supermarket.",
+    imagePath: "/images/gallery/IMG-20260916-WA0216.jpg",
+    accentColor: "from-amber-600 to-amber-900"
+  },
+  {
+    id: "wa-0217",
+    title: "Signature Mocktail Craft",
+    category: "Mixology",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Artisanal espresso & fruit cold brew mocktail preparation.",
+    imagePath: "/images/gallery/IMG-20260916-WA0217.jpg",
+    accentColor: "from-orange-700 to-red-900"
+  },
+  {
+    id: "wa-0218",
+    title: "Rosetta Pattern Free-Pour",
+    category: "Latte Art",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Flowing 5-tier rosetta leaf latte art with high glossy sheen.",
+    imagePath: "/images/gallery/IMG-20260916-WA0218.jpg",
+    accentColor: "from-amber-700 to-amber-900"
+  },
+  {
+    id: "wa-0219",
+    title: "Peak Footfall Counter Speed",
+    category: "Cafe Operations",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Rapid beverage turnaround during peak retail hours at Pearl-Qatar.",
+    imagePath: "/images/gallery/IMG-20260916-WA0219.jpg",
+    accentColor: "from-stone-700 to-amber-900"
+  },
+  {
+    id: "wa-0220",
+    title: "Swan Motif Free-Pour",
+    category: "Latte Art",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Advanced free-pour swan silhouette with delicate neck and wing detail.",
+    imagePath: "/images/gallery/IMG-20260916-WA0220.jpg",
+    accentColor: "from-yellow-700 to-amber-800"
+  },
+  {
+    id: "wa-0221",
+    title: "Double Shot Espresso Extraction",
+    category: "Espresso",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Rich golden crema extraction from specialty single-origin roast.",
+    imagePath: "/images/gallery/IMG-20260916-WA0221.jpg",
+    accentColor: "from-amber-800 to-amber-950"
+  },
+  {
+    id: "wa-0222",
+    title: "Chilled Caramel Espresso",
+    category: "Signature Beverage",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Handcrafted chilled caramel espresso beverage with velvety foam layer.",
+    imagePath: "/images/gallery/IMG-20260916-WA0222.jpg",
+    accentColor: "from-amber-700 to-amber-900"
+  },
+  {
+    id: "wa-0223",
+    title: "Equipment Descaling & Hygiene",
+    category: "HACCP Hygiene",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Daily machine sanitization, portafilter cleaning, and HACCP compliance.",
+    imagePath: "/images/gallery/IMG-20260916-WA0223.jpg",
+    accentColor: "from-stone-700 to-amber-900"
+  },
+  {
+    id: "wa-0224",
+    title: "Artisanal Coffee Presentation",
+    category: "Hospitality",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Final drink presentation served on wooden tray for upscale patrons.",
+    imagePath: "/images/gallery/IMG-20260916-WA0224.jpg",
+    accentColor: "from-amber-600 to-amber-900"
   }
 ];
 
@@ -367,27 +502,91 @@ export const LATTE_ART_GALLERY = [
     accentColor: "from-orange-800 to-amber-700"
   },
   {
-    title: "Layered Sunrise Cold Brew Mocktail",
-    category: "Mixology & Layering",
-    description: "Precision dual-layered specialty cold beverage featuring clean color separation & citrus aromatics.",
-    imagePath: "/images/gallery/sajan-signature-mocktail.png",
+    title: "Multi-Tiered Tulip Pattern",
+    category: "Latte Art",
+    description: "Free-pour multi-layered tulip motif in ceramic cup.",
+    imagePath: "/images/gallery/IMG-20260916-WA0204.jpg",
+    accentColor: "from-amber-700 to-amber-900"
+  },
+  {
+    title: "V60 Bloom & Drip",
+    category: "Manual Brew",
+    description: "Precision V60 manual pour-over filter coffee extraction.",
+    imagePath: "/images/gallery/IMG-20260916-WA0205.jpg",
+    accentColor: "from-amber-900 to-stone-900"
+  },
+  {
+    title: "Iced Cold Brew Creation",
+    category: "Signature Drink",
+    description: "Chilled cold brew served over clear ice spheres.",
+    imagePath: "/images/gallery/IMG-20260916-WA0206.jpg",
+    accentColor: "from-amber-800 to-amber-950"
+  },
+  {
+    title: "Velvety Cappuccino Pour",
+    category: "Latte Art",
+    description: "Silky 62°C microfoam with defined crema edge.",
+    imagePath: "/images/gallery/IMG-20260916-WA0208.jpg",
+    accentColor: "from-orange-800 to-amber-700"
+  },
+  {
+    title: "Layered Chilled Mocktail",
+    category: "Mixology",
+    description: "Multi-layered cold espresso mocktail with citrus notes.",
+    imagePath: "/images/gallery/IMG-20260916-WA0210.jpg",
     accentColor: "from-orange-700 to-red-900"
   },
   {
-    title: "Live Specialty Bar Operations",
-    category: "Barista In-Action",
-    description: "Crafting beverages live behind the bar at Pearl-Qatar, Doha.",
-    imagePath: "/images/gallery/sajan-presenting-drink.png",
-    accentColor: "from-amber-600 to-amber-900"
+    title: "4-Stack High-Contrast Tulip",
+    category: "Latte Art",
+    description: "Bold push pours forming clean layered hearts.",
+    imagePath: "/images/gallery/IMG-20260916-WA0212.jpg",
+    accentColor: "from-amber-700 to-amber-900"
   },
   {
-    title: "Precision Shaker Aeration",
-    category: "Beverage Craft",
-    description: "High energy shaker technique aerating iced specialty espresso drinks.",
-    imagePath: "/images/gallery/sajan-shaking-beverage.png",
-    accentColor: "from-stone-700 to-amber-900"
+    title: "Decadent Hot Cocoa",
+    category: "Signature Drink",
+    description: "Specialty hot cocoa topped with whipped foam & drizzle.",
+    imagePath: "/images/gallery/IMG-20260916-WA0213.jpg",
+    accentColor: "from-amber-800 to-amber-950"
+  },
+  {
+    title: "Filter Pour-Over Bloom",
+    category: "Manual Brew",
+    description: "45-second bloom timing for maximum fruit note extraction.",
+    imagePath: "/images/gallery/IMG-20260916-WA0214.jpg",
+    accentColor: "from-amber-900 to-stone-900"
+  },
+  {
+    title: "Flowing Rosetta Motif",
+    category: "Latte Art",
+    description: "Symmetrical leaf rosetta pour with glossy sheen.",
+    imagePath: "/images/gallery/IMG-20260916-WA0218.jpg",
+    accentColor: "from-amber-700 to-amber-900"
+  },
+  {
+    title: "Swan Motif Free-Pour",
+    category: "Latte Art",
+    description: "Advanced free-pour swan silhouette with delicate neck and wing detail.",
+    imagePath: "/images/gallery/IMG-20260916-WA0220.jpg",
+    accentColor: "from-yellow-700 to-amber-800"
+  },
+  {
+    title: "Single-Origin Double Shot",
+    category: "Espresso",
+    description: "Calibrated 18.5g extraction with thick hazelnut crema.",
+    imagePath: "/images/gallery/IMG-20260916-WA0221.jpg",
+    accentColor: "from-amber-800 to-amber-950"
+  },
+  {
+    title: "Chilled Iced Latte",
+    category: "Signature Drink",
+    description: "Refreshing cold specialty latte served over ice.",
+    imagePath: "/images/gallery/IMG-20260916-WA0222.jpg",
+    accentColor: "from-amber-700 to-amber-900"
   }
 ];
+
 
 export interface BaristaVideoItem {
   id: string;
