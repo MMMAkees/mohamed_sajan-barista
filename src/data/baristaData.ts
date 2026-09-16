@@ -62,7 +62,7 @@ export const BARISTA_PROFILE = {
   instagramHandle: "mohamed_sajan_07",
   instagramUrl: "https://www.instagram.com/mohamed_sajan_07/",
   imagePath: "/sajan.png",
-  summary: `Dedicated and detail-oriented Specialty Coffee Barista with extensive progressive experience across premier specialty cafes in Sri Lanka and Qatar. Highly skilled in espresso extraction & calibration, microfoam milk texturing, latte art, and manual brew precision (V60, French Press). Recognized by upscale clientele and management for warm hospitality, product knowledge, speed, and flawless hygiene (HACCP) standards in high-footfall environments.`,
+  summary: `Dedicated and detail-oriented Barista with extensive progressive experience in specialty coffee preparation and customer focused cafe operations across Sri Lanka and Qatar. Skilled in espresso extraction, milk texturing, latte art, and manual brewing methods, with a strong record of maintaining consistent quality, speed, and hygiene standards in fast-paced, high volume environments. Recognized by customers and management for warm hospitality, product knowledge, and reliability. Adaptable multicultural professional with hands-on POS, cash handling, and inventory experience, seeking to bring precision and passion for coffee craft to a growing specialty coffee brand.`,
   stats: [
     { value: "2+", label: "Years Experience" },
     { value: "10,000+", label: "Espresso Shots Calibrated" },
@@ -91,12 +91,10 @@ export const CERTIFICATIONS_LIST: CertificationItem[] = [
   {
     id: "barista-cert",
     title: "Basic Certificate for Barista",
-    institution: "Colombo Bartender & Barista School (Pvt.) Ltd.",
-    studentNo: "BCB/CW/87/06",
-    duration: "2 Months (October 2024 - December 2024)",
+    institution: "Colombo Bartender & Barista School (Pvt.)",
     year: "2024",
     badge: "Barista Skills",
-    description: "Comprehensive 2-month professional training in barista skills, covering espresso extraction, milk texturing, coffee grinder calibration, manual brewing techniques, and customer service excellence.",
+    description: "Comprehensive professional training in barista skills, covering espresso extraction, milk texturing, coffee grinder calibration, manual brewing techniques, and customer service excellence.",
     skillsCovered: ["Espresso Calibration", "Milk Texturing", "Coffee Science", "Manual Brews", "Counter Management"]
   },
   {
@@ -105,7 +103,7 @@ export const CERTIFICATIONS_LIST: CertificationItem[] = [
     institution: "Colombo Bartender & Barista School (Pvt.) Ltd.",
     year: "2024",
     badge: "Food Safety & Hygiene",
-    description: "Intensive HACCP & ISO 22000 food safety training programme and written assessment. Certified in food hygiene standards, cross-contamination prevention, equipment sanitization, and food safety risk management.",
+    description: "Intensive HACCP & ISO 22000 food safety training programme and assessment. Certified in food hygiene standards, cross-contamination prevention, equipment sanitization, and food safety risk management.",
     skillsCovered: ["HACCP Compliance", "ISO 22000 Standards", "Hygiene & Sanitation", "Cross-Contamination Prevention", "Equipment Descaling"]
   }
 ];
@@ -114,7 +112,7 @@ export const WORK_EXPERIENCES: ExperienceItem[] = [
   {
     id: "f-mart",
     role: "Barista",
-    company: "F-Mart Boutique Supermarket",
+    company: "Fahrenheit Cafe (F-Mart Boutique Supermarket)",
     location: "Pearl-Qatar, Porto Arabia, Doha, Qatar",
     period: "Jan 2026 – Present",
     current: true,
@@ -122,29 +120,29 @@ export const WORK_EXPERIENCES: ExperienceItem[] = [
     responsibilities: [
       "Prepare and serve a full range of hot and cold espresso-based beverages to a diverse, upscale clientele at a busy in-store coffee counter.",
       "Maintain consistent drink quality and presentation while managing high customer footfall during peak retail hours.",
-      "Operate, calibrate, and daily deep-clean commercial espresso machines, grinders, and brewing equipment in line with food safety standards.",
-      "Handle point-of-sale (POS) transactions accurately, including cash, card, and mobile payments.",
-      "Monitor stock levels of specialty coffee beans, milk varieties, and consumables, coordinating timely reordering.",
-      "Build strong rapport with regular customers, resulting in high repeat business and glowing customer feedback.",
-      "Trusted to independently manage closing shifts — end-of-day cash reconciliation, equipment shutdown, sanitation, and securing premises."
+      "Operate and clean espresso machines, grinders, and brewing equipment daily in line with food safety standards.",
+      "Handle point-of-sale transactions accurately, including cash, card, and mobile payments.",
+      "Monitor stock levels of coffee beans, milk, and consumables, coordinating timely reordering with supervisors.",
+      "Build rapport with regular customers, contributing to strong repeat business and positive customer feedback.",
+      "Trusted to independently handle closing shifts end-of-day cash reconciliation, equipment shutdown/cleaning, and securing the store."
     ],
     skillsUsed: ["Espresso Calibration", "Vectored Latte Art", "High Footfall Counter", "HACCP Compliance", "POS Cash Reconciliation", "Inventory Control"]
   },
   {
     id: "grind",
     role: "Barista",
-    company: "Grind",
+    company: "Grind Cafe",
     location: "Colombo, Sri Lanka",
     period: "Feb 2024 – Nov 2025",
     current: false,
     tagline: "Renowned neighbourhood specialty coffee shop praised for serving 'the best coffee in the city'.",
     responsibilities: [
-      "Prepared a wide variety of espresso-based and filter coffee beverages, consistently receiving customer reviews citing it as 'the best coffee' in Colombo.",
-      "Delivered warm, efficient table and counter hospitality in a high-energy neighbourhood coffee bar.",
-      "Maintained immaculate cleanliness and organization of the bar counter, guest seating area, and brewing apparatus throughout shifts.",
-      "Managed daily cash handling and point-of-sale operations with an exemplary record of accuracy.",
-      "Regularly entrusted with closing shift duties, including register close-out, deep-cleaning equipment, and locking up premises.",
-      "Built foundational specialty barista skills in espresso dial-in, milk texturing, and customer engagement over nearly two years."
+      "Prepared a wide variety of espresso-based and filter coffee beverages, consistently earning praise from customers, including reviews citing it as \"the best coffee\" in the city.",
+      "Delivered friendly, efficient table and counter service in a fast-paced neighbourhood coffee shop.",
+      "Maintained cleanliness and organisation of the coffee bar, seating area, and equipment throughout each shift.",
+      "Managed daily cash handling and point-of-sale operations with a strong record of accuracy.",
+      "Regularly entrusted with closing shift duties, including register close-out, deep-cleaning equipment, and locking up the premises.",
+      "Built foundational barista skills in espresso extraction, milk texturing, and customer engagement over nearly two years, laying the groundwork for further specialty coffee roles abroad."
     ],
     skillsUsed: ["Espresso Dial-In", "Microfoam Texturing", "Filter Coffee", "Register Close-out", "Customer Engagement", "Equipment Sanitization"]
   }
