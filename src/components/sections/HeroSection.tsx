@@ -193,11 +193,13 @@ export default function HeroSection() {
               <div className="flex items-center justify-center gap-2">
                 {[
                   BARISTA_PROFILE.imagePath,
-                  "/images/gallery/sajan-hot-chocolate.jpg",
+                  "/images/gallery/sajan-fmart-apron.jpg",
+                  "/images/gallery/sajan-tulip-latte-art.jpg",
+                  "/images/gallery/sajan-v60-counter.jpg",
+                  "/images/gallery/sajan-hot-chocolate-marshmallow.jpg",
+                  "/images/gallery/sajan-tulip-latte-art-closeup.jpg",
                   "/images/gallery/sajan-signature-mocktail.png",
                   "/images/gallery/sajan-presenting-drink.png",
-                  "/images/gallery/sajan-shaking-beverage.png",
-                  "/images/gallery/sajan-bar-service.png",
                 ].map((imgSrc, idx) => (
                   <button
                     key={idx}

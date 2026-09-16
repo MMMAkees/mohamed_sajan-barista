@@ -239,6 +239,51 @@ export const SIGNATURE_BREWS: SignatureBrew[] = [
 
 export const ACTION_PHOTOS = [
   {
+    id: "fmart-apron-selfie",
+    title: "Barista Duty at F-Mart Boutique",
+    category: "Barista Action",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Sajan in his official F-Mart Boutique apron enjoying a freshly extracted specialty black coffee behind the bar counter.",
+    imagePath: "/images/gallery/sajan-fmart-apron.jpg",
+    accentColor: "from-amber-800 to-amber-950"
+  },
+  {
+    id: "tulip-latte-art-main",
+    title: "Precision Tulip Microfoam Pour",
+    category: "Latte Art",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Multi-tiered layered tulip latte art featuring glossy 62°C microfoam poured into a rustic ceramic cup on black marble.",
+    imagePath: "/images/gallery/sajan-tulip-latte-art.jpg",
+    accentColor: "from-amber-700 to-amber-900"
+  },
+  {
+    id: "v60-counter-view",
+    title: "Specialty Black Coffee Bar Service",
+    category: "Manual Brew",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Single-origin filter brew served at the marble counter with the ambient Pearl-Qatar night cafe backdrop.",
+    imagePath: "/images/gallery/sajan-v60-counter.jpg",
+    accentColor: "from-amber-900 to-stone-900"
+  },
+  {
+    id: "hot-chocolate-marshmallow",
+    title: "Gourmet Hot Chocolate & Marshmallows",
+    category: "Signature Beverage",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Artisanal hot chocolate topped with fluffy marshmallows, chocolate drizzle, and cocoa nibs served on a wooden board.",
+    imagePath: "/images/gallery/sajan-hot-chocolate-marshmallow.jpg",
+    accentColor: "from-amber-800 to-amber-950"
+  },
+  {
+    id: "tulip-latte-art-closeup",
+    title: "Glossy Microfoam Symmetry",
+    category: "Latte Art Detail",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "High contrast close-up view highlighting delicate contrast, base definition, and velvety crema sheen.",
+    imagePath: "/images/gallery/sajan-tulip-latte-art-closeup.jpg",
+    accentColor: "from-orange-800 to-amber-700"
+  },
+  {
     id: "hot-chocolate",
     title: "Decadent Specialty Hot Chocolate",
     category: "Signature Beverage",
@@ -287,11 +332,39 @@ export const ACTION_PHOTOS = [
 
 export const LATTE_ART_GALLERY = [
   {
-    title: "Decadent Specialty Hot Chocolate",
-    category: "Signature Beverage",
-    description: "Sajan presenting a rich artisanal hot chocolate topped with velvety microfoam & chocolate drizzle at F-Mart.",
-    imagePath: "/images/gallery/sajan-hot-chocolate.jpg",
+    title: "Precision Tulip Pour",
+    category: "Latte Art",
+    description: "Multi-layered tulip pour with crisp contrast and silky microfoam in a ceramic cup at Pearl-Qatar.",
+    imagePath: "/images/gallery/sajan-tulip-latte-art.jpg",
+    accentColor: "from-amber-700 to-amber-900"
+  },
+  {
+    title: "Gourmet Marshmallow Hot Chocolate",
+    category: "Signature Drink",
+    description: "Rich chocolate base topped with marshmallows & dark chocolate drizzle on a wooden serving board.",
+    imagePath: "/images/gallery/sajan-hot-chocolate-marshmallow.jpg",
     accentColor: "from-amber-800 to-amber-950"
+  },
+  {
+    title: "Counter Filter Coffee Experience",
+    category: "Manual Brew",
+    description: "Freshly brewed specialty filter coffee enjoying ambient night views at F-Mart Boutique Supermarket.",
+    imagePath: "/images/gallery/sajan-v60-counter.jpg",
+    accentColor: "from-amber-900 to-stone-900"
+  },
+  {
+    title: "Barista Duty Selfie",
+    category: "Barista at Work",
+    description: "Sajan in his official F-Mart apron savoring freshly extracted specialty coffee.",
+    imagePath: "/images/gallery/sajan-fmart-apron.jpg",
+    accentColor: "from-amber-800 to-amber-950"
+  },
+  {
+    title: "Layered Microfoam Sheen",
+    category: "Latte Art Detail",
+    description: "Close-up perspective of smooth symmetrical tulip layers and crema texture.",
+    imagePath: "/images/gallery/sajan-tulip-latte-art-closeup.jpg",
+    accentColor: "from-orange-800 to-amber-700"
   },
   {
     title: "Layered Sunrise Cold Brew Mocktail",
@@ -313,33 +386,6 @@ export const LATTE_ART_GALLERY = [
     description: "High energy shaker technique aerating iced specialty espresso drinks.",
     imagePath: "/images/gallery/sajan-shaking-beverage.png",
     accentColor: "from-stone-700 to-amber-900"
-  },
-  {
-    title: "Counter Operations & Sanitation",
-    category: "Live Bar Operations",
-    description: "Behind the counter at F-Mart Boutique Supermarket espresso bar.",
-    imagePath: "/images/gallery/sajan-bar-service.png",
-    accentColor: "from-amber-900 to-stone-900"
-  },
-  {
-    title: "Crisp 5-Tier Rosetta",
-    category: "Latte Art",
-    description: "High contrast microfoam pour showcasing symmetrical leaf patterns and defined base ring.",
-    imagePath: "/images/latte-art/rosetta.jpg",
-    accentColor: "from-amber-700 to-amber-900"
-  },
-  {
-    title: "Layered 4-Stack Tulip",
-    category: "Latte Art",
-    description: "Bold push pours forming clean layered hearts with high glossy sheen.",
-    imagePath: "/images/latte-art/layered-tulip.jpg",
-    accentColor: "from-orange-800 to-amber-700"
-  },
-  {
-    title: "Majestic Swan Motif",
-    category: "Latte Art",
-    description: "Advanced free-pour swan silhouette with flowing wing feathers and delicate head definition.",
-    imagePath: "/images/latte-art/swan-motif.jpg",
-    accentColor: "from-yellow-700 to-amber-800"
   }
 ];
+
