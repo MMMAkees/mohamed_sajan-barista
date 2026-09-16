@@ -92,22 +92,28 @@ export default function BaristaVideoShowcase() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
 
                   {/* Top Category Badge & Fullscreen Button */}
-                  <div className="absolute top-4 inset-x-4 flex items-center justify-between z-10">
+                  <div className="absolute top-4 inset-x-4 flex items-center justify-between z-20 pointer-events-auto">
                     <span className="text-[10px] uppercase font-extrabold tracking-widest px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-[#E6C594] border border-[#C89D66]/40 shadow-lg flex items-center gap-1.5">
                       <Sparkles className="w-3 h-3 text-[#C89D66]" />
                       {videoItem.category}
                     </span>
                     <button
-                      onClick={() => setActiveVideo(videoItem)}
-                      className="w-9 h-9 rounded-full bg-black/70 backdrop-blur-md flex items-center justify-center text-white hover:scale-110 transition-transform border border-white/20"
-                      title="Fullscreen Video Modal"
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveVideo(videoItem);
+                      }}
+                      className="w-10 h-10 rounded-full bg-black/80 backdrop-blur-md flex items-center justify-center text-white hover:scale-110 hover:bg-black transition-all border border-white/30 shadow-xl cursor-pointer"
+                      title="Fullscreen Theater Mode"
+                      aria-label="Expand video modal"
                     >
-                      <Maximize2 className="w-4 h-4" />
+                      <Maximize2 className="w-4 h-4 text-[#E6C594]" />
                     </button>
                   </div>
 
                   {/* Center Custom Play / Pause Button Overlay */}
                   <button
+                    type="button"
                     onClick={() => togglePlay(videoItem.id)}
                     className="absolute inset-0 flex items-center justify-center z-10 group/btn"
                     aria-label={isPlaying ? 'Pause video' : 'Play video'}
@@ -145,8 +151,12 @@ export default function BaristaVideoShowcase() {
                       Full HD Barista Reel
                     </span>
                     <button
-                      onClick={() => setActiveVideo(videoItem)}
-                      className="text-xs font-bold transition-all hover:underline"
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveVideo(videoItem);
+                      }}
+                      className="text-xs font-bold transition-all hover:underline cursor-pointer"
                       style={{ color: 'var(--gold-bright)' }}
                     >
                       Watch Theater Mode →
