@@ -389,3 +389,35 @@ export const LATTE_ART_GALLERY = [
   }
 ];
 
+export interface BaristaVideoItem {
+  id: string;
+  title: string;
+  category: string;
+  location: string;
+  description: string;
+  videoPath: string;
+  poster: string;
+}
+
+export const BARISTA_VIDEOS: BaristaVideoItem[] = [
+  {
+    id: "bar-craft-action-1",
+    title: "Live Specialty Beverage Craft & Shaker Aeration",
+    category: "Barista Technique",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Sajan live in action executing precision shaker aeration, beverage layering, and artisanal bar service behind the counter.",
+    videoPath: "/video/VID-20260916-WA0172.mp4",
+    poster: "/images/gallery/sajan-shaking-beverage.png"
+  },
+  {
+    id: "bar-craft-action-2",
+    title: "Espresso Bar Operations & Microfoam Texturing",
+    category: "Live Bar Operations",
+    location: "F-Mart Boutique, Pearl-Qatar",
+    description: "Live demonstration of espresso extraction, steam wand microfoam texturing, and free-hand pouring technique.",
+    videoPath: "/video/VID-20260916-WA0186.mp4",
+    poster: "/images/gallery/sajan-tulip-latte-art.jpg"
+  }
+];
+
+

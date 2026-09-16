@@ -5,6 +5,7 @@ import AboutSection from '@/components/sections/AboutSection';
 import InteractiveBrewSimulator from '@/components/sections/InteractiveBrewSimulator';
 import ExperienceSection from '@/components/sections/ExperienceSection';
 import SkillsSection from '@/components/sections/SkillsSection';
+import BaristaVideoShowcase from '@/components/sections/BaristaVideoShowcase';
 import LatteArtGallery from '@/components/sections/LatteArtGallery';
 import EducationSection from '@/components/sections/EducationSection';
 import ContactSection from '@/components/sections/ContactSection';
@@ -24,6 +25,7 @@ export default function Home() {
         <InteractiveBrewSimulator />
         <ExperienceSection />
         <SkillsSection />
+        <BaristaVideoShowcase />
         <LatteArtGallery />
         <EducationSection />
         <ContactSection />
@@ -32,3 +34,4 @@ export default function Home() {
     </main>
   );
 }
+

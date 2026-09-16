@@ -23,6 +23,7 @@ export default function Navbar() {
     { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#skills' },
     { name: 'Brew Lab', href: '#brew-simulator' },
+    { name: 'Videos', href: '#video-showcase' },
     { name: 'Latte Art', href: '#latte-art' },
     { name: 'Education', href: '#education' },
     { name: 'Contact', href: '#contact' },
